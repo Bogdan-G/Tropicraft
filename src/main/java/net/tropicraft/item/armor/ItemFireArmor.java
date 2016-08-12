@@ -23,6 +23,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemFireArmor extends ItemTropicraftArmor {
 
+	private float math_pi180 = 180.0F * 3.1415927F;
 	public ItemFireArmor(ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
 		
@@ -130,7 +131,7 @@ public class ItemFireArmor extends ItemTropicraftArmor {
         float range = 0.2F;
         float speed = 0.08F;
 
-        Random rand = new Random();
+        Random rand = new org.bogdang.modifications.random.XSTR();
         World worldRef = player.worldObj;
 
         int extraRand = 0;
@@ -190,8 +191,8 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             for (int i = 0; i < 1 + (onLava ? 5 : 0); i++) {
 
-                motionX = ((double)(-Math.sin((look) / 180.0F * 3.1415927F) * Math.cos(0 / 180.0F * 3.1415927F)) * (speed + (0.1 * rand.nextDouble())));
-                motionZ = ((double)(Math.cos((look) / 180.0F * 3.1415927F) * Math.cos(0 / 180.0F * 3.1415927F)) * (speed + (0.1 * rand.nextDouble())));
+                motionX = ((double)(-Math.sin((look) / math_pi180) * Math.cos(0 / math_pi180)) * (speed + (0.1 * rand.nextFloat())));
+                motionZ = ((double)(Math.cos((look) / math_pi180) * Math.cos(0 / math_pi180)) * (speed + (0.1 * rand.nextFloat())));
 
                 String particle = "flame";
                 if (rand.nextInt(2) == 0) particle = "smoke";
@@ -236,9 +237,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             float look = -180F;
             double dist = 0.5F;
 
-            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(player.rotationPitch / 180.0F * 3.1415927F)) * dist);
-            //double gatherY = player.posY-0.5 + (double)(-MathHelper.sin(player.rotationPitch / 180.0F * 3.1415927F) * dist) - 0D; //center.posY - 0D;
-            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(player.rotationPitch / 180.0F * 3.1415927F)) * dist);
+            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
+            //double gatherY = player.posY-0.5 + (double)(-MathHelper.sin(player.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
+            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
 
             String particle = "flame";
             if (rand.nextInt(2) == 0) particle = "smoke";
@@ -260,9 +261,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             range = 2F;
 
-            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(player.rotationPitch / 180.0F * 3.1415927F)) * dist);
-            //double gatherY = player.posY + 0.5 + (double)(-MathHelper.sin(player.rotationPitch / 180.0F * 3.1415927F) * dist) - 0D; //center.posY - 0D;
-            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(player.rotationPitch / 180.0F * 3.1415927F)) * dist);
+            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
+            //double gatherY = player.posY + 0.5 + (double)(-MathHelper.sin(player.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
+            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
 
             String particle = "flame";
             if (rand.nextInt(2) == 0) particle = "smoke";
@@ -289,9 +290,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
 
                         if (entity1 instanceof EntityFlameFX && player.getDistanceToEntity(entity1) < 4F && entity1.posY > player.posY) {
-                            if (player.getDistanceToEntity(entity1) < 2F) {
+                            /*if (player.getDistanceToEntity(entity1) < 2F) {
                                //TODO if (player.worldObj.getWorldTime() % 4 == 0) WeatherUtil.setParticleAge(entity1, WeatherUtil.getParticleAge(entity1) - 3);
-                            }
+                            }*/
                             if (player.getDistanceToEntity(entity1) < 2F || rand.nextInt(5) == 0) moveEnt(entity1, player, false);
                         }
                     }
@@ -309,9 +310,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
         float look = 0F;
         //int height = 10;
         double dist = 0.1F;
-        double gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(center.rotationPitch / 180.0F * 3.1415927F)) * dist);
-        double gatherY = center.posY+0.8 + (double)(-MathHelper.sin(center.rotationPitch / 180.0F * 3.1415927F) * dist) - 0D; //center.posY - 0D;
-        double gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(center.rotationPitch / 180.0F * 3.1415927F)) * dist);
+        double gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
+        double gatherY = center.posY+0.8 + (double)(-MathHelper.sin(center.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
+        double gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
         double entDist = ent.getDistance(gatherX, gatherY, gatherZ);
 
         if (entDist > -1) {
@@ -352,8 +353,8 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             //tNode.bodyPiece.posY += vecY / var9 * newspeed;
             //tNode.bodyPiece.posZ += vecZ / var9 * newspeed;
             //tNode.bodyPiece.setPosition(tNode.bodyPiece.posX, tNode.bodyPiece.posY, tNode.bodyPiece.posZ);
-            float pitch = (float)((Math.atan2(vecX, vecZ) * 180D) / 3.1415927410125732D);
-            float f = (float)((Math.atan2(vecZ, vecX) * 180D) / 3.1415927410125732D);
+            float pitch = (((float)Math.atan2(vecX, vecZ) * 180F) / 3.1415927410125732F);
+            float f = (((float)Math.atan2(vecZ, vecX) * 180F) / 3.1415927410125732F);
             float angle = f;
             angle += 180;
             //angle += 15;
@@ -368,7 +369,7 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             for(; angle >= 360F; angle -= 360F) { }
 
-            for(pitch = pitch; pitch < 0F; pitch += 180F) { }
+            for(/*pitch = pitch*/; pitch < 0F; pitch += 180F) { }
 
             for(; pitch >= 180F; pitch -= 180F) { }
 
@@ -378,7 +379,7 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             //enable once 3d trig works
             if (!shield) {
                 angle = angle - 15;
-            } else if (shield/* || activeMode == 1*/) {
+            } else/* if (shield*//* || activeMode == 1*//*)*/ {
                 /*if (shockWaveCharging) {
                     angle = angle - 5;
                 } else {*/
@@ -417,9 +418,10 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             //ent.posZ += ent.motionZ;
 
 
-            if (!shield) {
+            //if (!shield) {
                 //angle = angle - 5;
-            } else if (shield/* || activeMode == 1*/) {
+            //} else if (shield/* || activeMode == 1*/) {
+            if (shield) {
                 if (ent.worldObj.rand.nextInt(10) == 0) {
                     ent.motionY+= 0.05F;
 
@@ -430,14 +432,14 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
         } else {
 
-            if (true) return;
+            /*if (true) */return;
 
-            look = 40F;
+            /*look = 40F;
             //int height = 10;
             dist = 1F;
-            gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(center.rotationPitch / 180.0F * 3.1415927F)) * dist);
-            gatherY = center.posY-0.5 + (double)(-MathHelper.sin(center.rotationPitch / 180.0F * 3.1415927F) * dist) - 0D; //center.posY - 0D;
-            gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / 180.0F * 3.1415927F) * Math.cos(center.rotationPitch / 180.0F * 3.1415927F)) * dist);
+            gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
+            gatherY = center.posY-0.5 + (double)(-MathHelper.sin(center.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
+            gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
             double vecX = ent.posX - gatherX;
             double vecY = ent.posY - gatherY;// + (double)(tNode.nextNode.bodyPiece.height / 2.0F) - (tNode.bodyPiece.posY + (double)(tNode.bodyPiece.height / 2.0F));
             double vecZ = ent.posZ - gatherZ;
@@ -445,7 +447,7 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             ent.posX = gatherX + vecX * dist;
             ent.posY = gatherY + vecY * dist;
             ent.posZ = gatherZ + vecZ * dist;
-            ent.setPosition(ent.posX, ent.posY, ent.posZ);
+            ent.setPosition(ent.posX, ent.posY, ent.posZ);*/
             //entDist = ent.getDistance(gatherX, gatherY, gatherZ);
         }
     }

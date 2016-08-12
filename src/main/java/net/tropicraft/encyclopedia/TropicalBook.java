@@ -98,7 +98,7 @@ public abstract class TropicalBook {
             }
         } catch (IOException ex) {
             Logger.getLogger(TropicalBook.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } finally {try {contents.close();} catch (IOException ex) {Logger.getLogger(TropicalBook.class.getName()).log(Level.SEVERE, null, ex);}}
 
     }
     
@@ -158,10 +158,11 @@ public abstract class TropicalBook {
     }*/
     
     protected void saveData() {
+        OutputStream dataOutput = null;
         try {
             dataFile.createNewFile();
             if (dataFile.canWrite()) {
-                OutputStream dataOutput = new FileOutputStream(dataFile);
+                dataOutput = new FileOutputStream(dataFile);
                 NBTTagCompound data = new NBTTagCompound();
                 for (String s : visiblePages.keySet()) {
                     data.setByte(s, visiblePages.get(s));
@@ -171,7 +172,7 @@ public abstract class TropicalBook {
             }
         } catch (IOException ex) {
             Logger.getLogger(TropicalBook.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } finally {try {if(dataOutput != null) dataOutput.close();} catch (IOException ex) {Logger.getLogger(TropicalBook.class.getName()).log(Level.SEVERE, null, ex);}}
     }
     
     public boolean hasRecipeList() {

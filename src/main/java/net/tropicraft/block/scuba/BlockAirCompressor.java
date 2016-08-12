@@ -126,9 +126,9 @@ public class BlockAirCompressor extends BlockTropicraft implements ITileEntityPr
      */
 	@Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        if (!world.isRemote) {
+        /*if (!world.isRemote) {
             
-        }
+        }*/
     }
 
 	@Override

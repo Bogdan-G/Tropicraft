@@ -302,11 +302,11 @@ public class EntityChair extends Entity {
 
 	@Override
 	protected void entityInit() {
-		this.dataWatcher.addObject(DATAWATCHER_COLOR, new Integer(ColorHelper.DEFAULT_VALUE));
-		this.dataWatcher.addObject(DATAWATCHER_DAMAGE, new Float(0));
-		this.dataWatcher.addObject(DATAWATCHER_COMESAILAWAY, new Byte((byte)0));
-		this.dataWatcher.addObject(DATAWATCHER_FORWARD_DIRECTION, new Integer(1));
-		this.dataWatcher.addObject(DATAWATCHER_TIME_SINCE_HIT, new Integer(0));
+		this.dataWatcher.addObject(DATAWATCHER_COLOR, ColorHelper.DEFAULT_VALUE);
+		this.dataWatcher.addObject(DATAWATCHER_DAMAGE, 0f);
+		this.dataWatcher.addObject(DATAWATCHER_COMESAILAWAY, (byte)0);
+		this.dataWatcher.addObject(DATAWATCHER_FORWARD_DIRECTION, (int)1);
+		this.dataWatcher.addObject(DATAWATCHER_TIME_SINCE_HIT, (int)0);
 	}
 
 	@Override

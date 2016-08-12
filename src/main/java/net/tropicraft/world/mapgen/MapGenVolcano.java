@@ -90,7 +90,7 @@ public class MapGenVolcano {
         int steepnessMod = volcanoCoords.posY == 1 ? LAND_STEEPNESS_MOD : OCEAN_STEEPNESS_MOD;
         
         long seed = (long)volcCenterX * 341873128712L + (long)volcCenterZ * 132897987541L + worldObj.getWorldInfo().getSeed() + (long)4291726;
-        Random rand = new Random(seed);
+        Random rand = new org.bogdang.modifications.random.XSTR(seed);
         
         int radiusX = rand.nextInt(MAX_RADIUS - MIN_RADIUS) + MIN_RADIUS;
         int radiusZ = rand.nextInt(MAX_RADIUS - MIN_RADIUS) + MIN_RADIUS;
@@ -184,7 +184,7 @@ public class MapGenVolcano {
         int randX = i / numChunks;
         int randZ = j / numChunks;
         long seed = (long)randX * 341873128712L + (long)randZ * 132897987541L + worldObj.getWorldInfo().getSeed() + (long)4291726;
-        Random rand = new Random(seed);
+        Random rand = new org.bogdang.modifications.random.XSTR(seed);
         randX *= numChunks;
         randZ *= numChunks;
         randX += rand.nextInt(numChunks - offsetChunks);

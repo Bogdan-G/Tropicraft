@@ -20,7 +20,7 @@ import net.tropicraft.world.biomes.BiomeGenRainforest;
 
 public class WorldGenHomeTree extends TCGenBase {
 
-	private class BranchNode 
+	private static class BranchNode 
 	{
 		public int x1, y1, z1;
 		public int x2, y2, z2;
@@ -37,9 +37,9 @@ public class WorldGenHomeTree extends TCGenBase {
 	}
 
 	private final Block woodID = TCBlockRegistry.logs;
-	private final int woodMeta = 1;
+	private static final int woodMeta = 1;
 	private final Block leafID = TCBlockRegistry.rainforestLeaves;
-	private final int leafMeta = 0;
+	private static final int leafMeta = 0;
 
 	private ArrayList<BranchNode> branchList = new ArrayList(); 
 	private int trunkRadius;
@@ -107,10 +107,10 @@ public class WorldGenHomeTree extends TCGenBase {
 				placeBlock(trunkX + 1, y, trunkZ - 1, woodID, woodMeta, false);
 				placeBlock(trunkX - 1, y, trunkZ + 1, woodID, woodMeta, false);
 				placeBlock(trunkX - 1, y, trunkZ - 1, woodID, woodMeta, false);
-				double angle = rand.nextDouble() * 3.141592D * 2D;
+				double angle = rand.nextFloat() * 3.141592D * 2D;
 				if(rand.nextInt(3) == 0)
 				{
-					double length = rand.nextDouble() * trunkRadius - 4;
+					double length = rand.nextFloat() * trunkRadius - 4;
 					int spawnerX = trunkX - 4 + rand.nextInt(9);
 					int spawnerZ = trunkZ - 4 + rand.nextInt(9);
 					worldObj.setBlock(spawnerX, y + 1, spawnerZ, Blocks.mob_spawner);
@@ -128,7 +128,7 @@ public class WorldGenHomeTree extends TCGenBase {
 			placeBlock(trunkX - 1, y, trunkZ, Blocks.vine, 2, false);
 			placeBlock(trunkX, y, trunkZ + 1, Blocks.vine, 2, false);
 			placeBlock(trunkX, y, trunkZ - 1, Blocks.vine, 2, false);
-			if(rand.nextInt(6) == 0);
+			//if(rand.nextInt(6) == 0);//off? okay
 			{
 				if(y >= j + height - 6)
 				{
@@ -138,7 +138,7 @@ public class WorldGenHomeTree extends TCGenBase {
 						int branchLength = rand.nextInt(10) + 15;
 						int branchX1 = trunkX;
 						int branchZ1 = trunkZ;
-						double angle = rand.nextDouble() * 3.141592D * 2D;
+						double angle = rand.nextFloat() * 3.141592D * 2D;
 						branchX1 = (int)((trunkRadius * Math.sin(angle)) + branchX1);
 						branchZ1 = (int)((trunkRadius * Math.cos(angle)) + branchZ1); 
 						int branchX2 = (int)((branchLength * Math.sin(angle)) + branchX1);
@@ -217,7 +217,7 @@ public class WorldGenHomeTree extends TCGenBase {
 			int baseDistance = rand.nextInt(trunkRadius - 3);
 			int branchX1 = topX;
 			int branchZ1 = topZ;
-			double angle = rand.nextDouble() * 3.141592D * 2D;
+			double angle = rand.nextFloat() * 3.141592D * 2D;
 			branchX1 = (int)((baseDistance * Math.sin(angle)) + branchX1);
 			branchZ1 = (int)((baseDistance * Math.cos(angle)) + branchZ1); 
 			int branchX2 = (int)((branchLength * Math.sin(angle)) + branchX1);

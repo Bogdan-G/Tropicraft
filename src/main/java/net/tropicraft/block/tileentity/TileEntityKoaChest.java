@@ -81,10 +81,11 @@ public class TileEntityKoaChest extends TileEntityChest
         	
 	        if (var2 != null)
 	        {
-	            double var4 = (double)this.xCoord + 0.5D;// + (this.worldObj.rand.nextDouble() - this.worldObj.rand.nextDouble()) * 1.0D;
+	            double var4 = (double)this.xCoord + 0.5D;// + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 1.0D;
 	            double var6 = (double)(this.yCoord + 1);
-	            double var8 = (double)this.zCoord + 0.5D;// + (this.worldObj.rand.nextDouble() - this.worldObj.rand.nextDouble()) * 1.0D;
-	            EntityLiving var10 = var2 instanceof EntityLiving ? (EntityLiving)var2 : null;
+	            double var8 = (double)this.zCoord + 0.5D;// + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 1.0D;
+	            EntityLiving var10;
+	            try{var10 = /*var2 instanceof EntityLiving ? */(EntityLiving)var2/* : null*/;} catch (Exception e) {var10 = null;}
 	            var2.setLocationAndAngles(var4, var6, var8, this.worldObj.rand.nextFloat() * 360.0F, 0.0F);
 	
 	            //if (getCanSpawnHere(var2))
@@ -159,7 +160,7 @@ public class TileEntityKoaChest extends TileEntityChest
         	for (j = 0; j < entIDs.length; j++) {
 	        	//entIDs[j] = nbttagcompound.getInteger("entID_" + i);
 	        	Entity ent = (Entity)ents.get(i);//TropicraftMod.proxy.getEntByID(entIDs[j]);
-	        	if (ent instanceof EntityKoaBase && ent != null && entIDs[j] == ((EntityKoaBase)ent).getAIAgent().entID && ((EntityKoaBase)ent).getAIAgent().entID != -1) {
+	        	if (ent instanceof EntityKoaBase/* && ent != null */&&entIDs[j] == ((EntityKoaBase)ent).getAIAgent().entID && ((EntityKoaBase)ent).getAIAgent().entID != -1) {
 	        		existing++;
 	        		//System.out.println("derp: " + existing);
 	        		if (ent instanceof EntityKoaHunter) {
@@ -173,14 +174,14 @@ public class TileEntityKoaChest extends TileEntityChest
 	        		//entRefs[i] = (EntityKoaManly)ent;
 	        		//do nothing, occupied
 	            	break;
-	        	} else {
+	        	//} else {
 	        		
 	        	}
 	        }
         	
-        	if (j < entIDs.length) {
+        	//if (j < entIDs.length) {//empty if
         		//anything to do? weve got count already
-        	}
+        	//}
         	
         	
         }

@@ -193,13 +193,13 @@ public class BlockTropicsPortal extends BlockFluidClassic {
 
         if (world.getBlockMetadata(i, j, k) == 0 && world.isRemote) {
             for (int count = 0; count < maxCount; count++) {
-                world.spawnParticle("bubble", i + random.nextDouble(), j + random.nextDouble(), k + random.nextDouble(), 0D, 0D, 0D);
+                world.spawnParticle("bubble", i + random.nextFloat(), j + random.nextFloat(), k + random.nextFloat(), 0D, 0D, 0D);
             }
         }
 
         if (world.isAirBlock(i, j + 1, k) && world.isRemote) {
             for (int count = 0; count < maxCount; count++) {
-                world.spawnParticle("splash", i + random.nextDouble(), j + 0.9, k + random.nextDouble(), 0D, 0D, 0D);
+                world.spawnParticle("splash", i + random.nextFloat(), j + 0.9, k + random.nextFloat(), 0D, 0D, 0D);
             }
         }
     }

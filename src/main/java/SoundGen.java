@@ -10,9 +10,10 @@ import java.util.zip.ZipFile;
 public class SoundGen {
 
 	public static void main(String[] args) {
+        ZipFile zip = null;
         try
         {
-            ZipFile zip = new ZipFile("F:/dev/code/old workspaces/forge-1.7.10-tropicraft/pkg/assets.zip");
+            zip = new ZipFile("F:/dev/code/old workspaces/forge-1.7.10-tropicraft/pkg/assets.zip");
 
             Enumeration<? extends ZipEntry> entries = zip.entries();
 
@@ -85,7 +86,7 @@ public class SoundGen {
                 }
             }
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder(78);
             sb.append("\n\n");
             sb.append("{\n");
 
@@ -150,6 +151,10 @@ public class SoundGen {
         catch(Exception e)
         {
             e.printStackTrace();
+        }
+        finally
+        {
+        try{if (zip !=null) zip.close();}catch(java.io.IOException e){e.printStackTrace();}
         }
 
 	}

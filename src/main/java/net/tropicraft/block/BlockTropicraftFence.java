@@ -28,7 +28,7 @@ public class BlockTropicraftFence extends BlockFence {
 	public boolean canConnectFenceTo(IBlockAccess world, int x, int y, int z) {
 		Block block = world.getBlock(x, y, z);
 		if (block != this && block != TCBlockRegistry.bambooFenceGate && block != TCBlockRegistry.palmFenceGate) {
-			return block != null && block.getMaterial().isOpaque() && block.renderAsNormalBlock() ? block.getMaterial() != Material.gourd : false;
+			return block != null && block.getMaterial().isOpaque() && block.renderAsNormalBlock() && block.getMaterial() != Material.gourd;
 		} else {
 			return true;
 		}

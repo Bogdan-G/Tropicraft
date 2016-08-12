@@ -12,7 +12,7 @@ import net.tropicraft.registry.TCItemRegistry;
 
 public class BlockTropicraftOre extends BlockTropicraft {
 
-    private Random rand = new Random();
+    private Random rand = new org.bogdang.modifications.random.XSTR();
     
 	public BlockTropicraftOre() {
 		super(Material.rock); // closest to ore

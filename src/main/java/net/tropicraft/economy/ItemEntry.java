@@ -31,7 +31,7 @@ public class ItemEntry {
 		
 		if (compareDamage == false && parItem.getMaxDamage() != 0) {
 			val *= ((double)(parItem.getMaxDamage() - parItem.getItemDamage()) / (double)parItem.getMaxDamage());
-		} else if (item.stackSize > 1) { 
+		//} else if (item.stackSize > 1) { 
 			//priceFactor = 
 			//val /= item.stackSize * parItem.stackSize;
 		}

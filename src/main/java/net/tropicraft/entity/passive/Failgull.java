@@ -79,15 +79,15 @@ public class Failgull extends EntityFlying {
 		}
 
 		if (leader != null) {
-			if (flockPosition % 2 == 0) {
+			//if (flockPosition % 2 == 0) {
 				this.waypointX = leader.waypointX;
 				this.waypointY = leader.waypointY;
 				this.waypointZ = leader.waypointZ;
-			} else {
-				this.waypointX = leader.waypointX;
-				this.waypointY = leader.waypointY;
-				this.waypointZ = leader.waypointZ;
-			}
+			//} else {
+				//this.waypointX = leader.waypointX;
+				//this.waypointY = leader.waypointY;
+				//this.waypointZ = leader.waypointZ;
+			//}
 		}
 
 		if (!inFlock) {

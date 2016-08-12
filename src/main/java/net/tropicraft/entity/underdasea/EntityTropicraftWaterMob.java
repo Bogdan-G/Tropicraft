@@ -48,6 +48,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
     public float fishingEscapeSpeed = 2.4f;
     public static boolean fishingDebug = false;
     public List<String> fishingLog = new ArrayList<String>();
+    private float math_pi_long = 3.1415927410125732F;
+    private float math_pi = 3.141593F;
 
     public EntityTropicraftWaterMob(World world) {
         super(world);
@@ -88,17 +90,17 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
         if(prevRotationPitch == 0.0F && prevRotationYaw == 0.0f)
         {
             float f = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
-            prevRenderYawOffset = renderYawOffset = (float)((Math.atan2(motionX, motionZ) * 180D) / 3.1415927410125732D);
-            prevRotationPitch = rotationPitch = (float)((Math.atan2(motionY, f) * 180D) / 3.1415927410125732D);
+            prevRenderYawOffset = renderYawOffset = (((float)Math.atan2(motionX, motionZ) * 180F) / math_pi_long);
+            prevRotationPitch = rotationPitch = (((float)Math.atan2(motionY, f) * 180F) / math_pi_long);
         }
         float f3 = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
-        for(rotationPitch = (float)((Math.atan2(motionY, f3) * 180D) / 3.1415927410125732D); rotationPitch - prevRotationPitch < -180F; prevRotationPitch -= 360F) { }
+        for(rotationPitch = (((float)Math.atan2(motionY, f3) * 180F) / math_pi_long); rotationPitch - prevRotationPitch < -180F; prevRotationPitch -= 360F) { }
         for(; rotationPitch - prevRotationPitch >= 180F; prevRotationPitch += 360F) { }
         rotationPitch = prevRotationPitch + (rotationPitch - prevRotationPitch) * 0.2F;
 
-        if(important1 > 6.283185F)
+        if(important1 > 2*math_pi)
         {
-            important1 -= 6.283185F;
+            important1 -= 2*math_pi;
             if(rand.nextInt(10) == 0)
             {
                 important2 = (1.0F / (rand.nextFloat() + 1.0F)) * 0.2F;
@@ -112,8 +114,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
 
         if(!isSurfacing) {
             // Wander
-            if(important1 < 3.141593F) {
-                float f = important1 / 3.141593F;
+            if(important1 < math_pi) {
+                float f = important1 / math_pi;
                 if((double)f > 0.75D) {
                     randomMotionSpeed = 1.0F;
                 } 
@@ -128,7 +130,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
             }
 
             if(targetEntity == null){
-                renderYawOffset += ((-(float)Math.atan2(motionX, motionZ) * 180F) / 3.141593F - renderYawOffset) * 0.1F;
+                renderYawOffset += ((-(float)Math.atan2(motionX, motionZ) * 180F) / math_pi - renderYawOffset) * 0.1F;
                 rotationYaw = renderYawOffset;
             }
         }
@@ -154,7 +156,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
             	this.setAir(20 * 20);
             //}
 
-            if(!isInWater() && deathTime == 0) {
+            //if(!isInWater() && deathTime == 0) {
                 //motionY += .50;
                 /*this.attackEntityFrom(DamageSource.drown, 1);
                 int d = 1;
@@ -167,7 +169,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
                 }
                 motionZ = rand.nextFloat()*.20F *d;
                 motionX = rand.nextFloat()*.20F*e;*/
-            }
+            //}
 
             Block blockUnder = worldObj.getBlock(MathHelper.floor_double(posX), MathHelper.floor_double(posY - 1), MathHelper.floor_double(posZ));
             Block blockAt = worldObj.getBlock(MathHelper.floor_double(posX), MathHelper.floor_double(posY), MathHelper.floor_double(posZ));
@@ -215,7 +217,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
             targetEntity = this.getAttackTarget();
 
             if(rand.nextInt(hyperness) == 0 || !inWater || randomMotionVecX == 0.0F && randomMotionVecY == 0.0F && randomMotionVecZ == 0.0F) {
-                float f = rand.nextFloat() * 3.141593F * 2.0F;
+                float f = rand.nextFloat() * math_pi * 2.0F;
                 randomMotionVecX = MathHelper.cos(f) * horFactor;            
                 randomMotionVecZ = MathHelper.sin(f) * horFactor;
             }
@@ -229,7 +231,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
                     targetHeightTick = 120;
                     reachedTarget = true;
                 }
-                if(posY <= targetHeight + .15 && posY >= targetHeight - .15 || reachedTarget == true) {
+                if(posY <= targetHeight + .15 && posY >= targetHeight - .15 || reachedTarget/* == true*/) {
                     reachedTarget = true;
                     targetHeightTick = 120;
                     randomMotionVecY = 0;
@@ -237,9 +239,9 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
                     if(rand.nextInt(fickleness) == 0) {              
                         reachedTarget = getTargetHeight();
                     }
-                } else if(posY > targetHeight && !reachedTarget) {                 
+                } else if(/*!reachedTarget && */posY > targetHeight) {                 
                     randomMotionVecY = -climbFactor;
-                } else if(posY < targetHeight && !reachedTarget) {
+                } else if(/*!reachedTarget && */posY < targetHeight) {
                     randomMotionVecY  = climbFactor;
                 }           
             }
@@ -500,12 +502,12 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
 						//System.out.println("Gross");
 						setHookID(-1);
 					}
-					if(rand.nextInt(this.fishingBreakLineOdds) == 0){
-						if(!worldObj.isRemote){
+					//if(rand.nextInt(this.fishingBreakLineOdds) == 0){
+						//if(!worldObj.isRemote){
 							//fishDebug("I managed to get your hook, see ya ;D");
 							//e.setDead();
-						}
-					}
+						//}
+					//}
 				}
 			}
 		}

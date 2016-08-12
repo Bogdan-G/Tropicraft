@@ -30,7 +30,7 @@ public class BiomeGenTropics extends BiomeGenTropicraft {
 		}
 		
 		if(rand.nextInt(FRUIT_TREE_CHANCE) == 0) {
-			int treeType = new Random((long)(x >> 2) << 32 | (long)(z >> 2)).nextInt(4);
+			int treeType = new org.bogdang.modifications.random.XSTR((long)(x >> 2) << 32 | (long)(z >> 2)).nextInt(4);
 			int i = randCoord(rand, x, 16);
 			int k = randCoord(rand, z, 16);
 			new WorldGenTropicraftFruitTrees(world, rand, treeType).generate(i, getTerrainHeightAt(world, i, k), k);

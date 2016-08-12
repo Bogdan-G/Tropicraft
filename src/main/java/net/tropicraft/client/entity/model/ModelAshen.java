@@ -20,6 +20,7 @@ public class ModelAshen extends ModelBase {
     public float headAngle;
     public boolean swinging;
     public int actionState;
+    private float math_pi = 3.141593F;
 
     public ModelAshen() {
         swinging = false;
@@ -109,17 +110,17 @@ public class ModelAshen extends ModelBase {
     @Override
     public void setLivingAnimations(EntityLivingBase entityliving, float f, float f1, float f2) {
         rightLeg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.25F * f1;
-        leftLeg.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.25F * f1;
+        leftLeg.rotateAngleX = MathHelper.cos(f * 0.6662F + math_pi) * 1.25F * f1;
     }
 
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
 
         head.rotateAngleX = f4 / 125F + headAngle;
-        head.rotateAngleY = f3 / 125F + 3.14159F;
+        head.rotateAngleY = f3 / 125F + math_pi/*3.14159F*/;
 
         float ArmRotater = 1.247196F;
-        float subStraight = 1.570795F;
+        float subStraight = math_pi/2/*1.570795F*/;
 
 
         switch (actionState) {

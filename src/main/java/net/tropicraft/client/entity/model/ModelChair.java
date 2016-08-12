@@ -14,6 +14,7 @@ public class ModelChair extends ModelBase {
     public ModelRenderer frontRightLeg;
     public ModelRenderer rightArm;
     public ModelRenderer leftArm;
+    private float math_pi_0_5 = 1.570796F;
 
     public ModelChair() {
         seat = new ModelRenderer(this, 0, 0);
@@ -75,7 +76,7 @@ public class ModelChair extends ModelBase {
         rightArm.setRotationPoint(-10F, -4F, 11F);
 
         rightArm.rotateAngleX = 0F;
-        rightArm.rotateAngleY = 1.570796F;
+        rightArm.rotateAngleY = math_pi_0_5;
         rightArm.rotateAngleZ = 0F;
         rightArm.mirror = false;
 
@@ -84,7 +85,7 @@ public class ModelChair extends ModelBase {
         leftArm.setRotationPoint(8F, -5F, 11F);
 
         leftArm.rotateAngleX = 0F;
-        leftArm.rotateAngleY = 1.570796F;
+        leftArm.rotateAngleY = math_pi_0_5;
         leftArm.rotateAngleZ = 0F;
         leftArm.mirror = false;
     }

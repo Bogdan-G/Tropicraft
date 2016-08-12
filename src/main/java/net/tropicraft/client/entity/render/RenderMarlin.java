@@ -141,7 +141,8 @@ public class RenderMarlin extends RenderLiving {
 			OpenGlHelper.setActiveTexture(OpenGlHelper.lightmapTexUnit);
 			GL11.glDisable(3553 /*GL_TEXTURE_2D*/);
 			OpenGlHelper.setActiveTexture(OpenGlHelper.defaultTexUnit);
-			if ((k >> 24 & 0xff) > 0 || entityliving.hurtTime > 0 || entityliving.deathTime > 0) {
+			int k_m = (k >> 24 & 0xff);
+			if ((k_m) > 0 || entityliving.hurtTime > 0 || entityliving.deathTime > 0) {
 				GL11.glDisable(3553 /*GL_TEXTURE_2D*/);
 				GL11.glDisable(3008 /*GL_ALPHA_TEST*/);
 				GL11.glEnable(3042 /*GL_BLEND*/);
@@ -159,11 +160,11 @@ public class RenderMarlin extends RenderLiving {
 					}
 
 				}
-				if ((k >> 24 & 0xff) > 0) {
+				if ((k_m) > 0) {
 					float f11 = (float) (k >> 16 & 0xff) / 255F;
 					float f13 = (float) (k >> 8 & 0xff) / 255F;
 					float f14 = (float) (k & 0xff) / 255F;
-					float f16 = (float) (k >> 24 & 0xff) / 255F;
+					float f16 = (float) (k_m) / 255F;
 					GL11.glColor4f(f11, f13, f14, f16);
 					mainModel.render(entityliving, f8, f7, f5, f3 - f2, f4, f6);
 					for (int j1 = 0; j1 < 4; j1++) {

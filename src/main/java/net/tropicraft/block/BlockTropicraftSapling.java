@@ -157,7 +157,7 @@ public class BlockTropicraftSapling extends BlockSapling implements IGrowable {
 	 }
 	 
 	 private WorldGenerator randomRainforestTreeGen(World world) {
-			Random rand = new Random();
+			Random rand = new org.bogdang.modifications.random.XSTR();
 			int type = rand.nextInt(4);
 			
 			switch(type) {
@@ -182,7 +182,10 @@ public class BlockTropicraftSapling extends BlockSapling implements IGrowable {
 	 public IIcon getIcon(int id, int metadata) {
 		 // the first 3 bits determine the sapling type
 		 int type = metadata & 7;
-		 if (type < 0 || type > (names.length - 1))
+		 /* FindBugs: Bad comparison of nonnegative value with negative constant or zero
+		  * This code compares a value that is guaranteed to be non-negative with a negative constant or zero.
+		  */
+		 if (/*type < 0 || */type > (names.length - 1))
 			 type = names.length - 1; // if out of range, orange sapling
 
 		 return icons[type];

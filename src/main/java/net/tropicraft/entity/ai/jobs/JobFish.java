@@ -87,7 +87,7 @@ public class JobFish extends JobBase {
 			}
 		}
 		
-		Random rand = new Random();
+		Random rand = new org.bogdang.modifications.random.XSTR();
 		
 		ai.maxDistanceFromHome = 16F;
 		if (state == EnumJobState.IDLE) {

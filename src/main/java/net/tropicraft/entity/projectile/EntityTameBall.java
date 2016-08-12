@@ -158,7 +158,7 @@ public class EntityTameBall extends EntityThrowableUsefull
         {
         	/*double speed = 0.15D;
         	double speedInheritFactor = 0.5D;
-        	EntityRotFX entityfx = new EntityIconFX(worldObj, posX, posY, posZ, (rand.nextDouble() - rand.nextDouble()) * speed, (rand.nextDouble() - rand.nextDouble()) * speed, (rand.nextDouble() - rand.nextDouble()) * speed, ParticleRegistry.squareGrey, Minecraft.getMinecraft().renderEngine);
+        	EntityRotFX entityfx = new EntityIconFX(worldObj, posX, posY, posZ, (rand.nextFloat() - rand.nextFloat()) * speed, (rand.nextFloat() - rand.nextFloat()) * speed, (rand.nextFloat() - rand.nextFloat()) * speed, ParticleRegistry.squareGrey, Minecraft.getMinecraft().renderEngine);
         	entityfx.motionX += (motionX * speedInheritFactor);
         	entityfx.motionZ += (motionZ * speedInheritFactor);
         	entityfx.setGravity(0F);
@@ -169,7 +169,7 @@ public class EntityTameBall extends EntityThrowableUsefull
 			entityfx.spawnAsWeatherEffect();*/
 			
 			double speed = 0.01D;
-			EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextDouble(), posY + 0.2D + rand.nextDouble() * 0.2D, posZ + rand.nextDouble(), (rand.nextDouble() - rand.nextDouble()) * speed, 0.03D, (rand.nextDouble() - rand.nextDouble()) * speed);
+			EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextFloat(), posY + 0.2D + rand.nextFloat() * 0.2D, posZ + rand.nextFloat(), (rand.nextFloat() - rand.nextFloat()) * speed, 0.03D, (rand.nextFloat() - rand.nextFloat()) * speed);
         	pm.setParticleRandoms(entityfx, true, true);
         	pm.setParticleFire(entityfx);
 			entityfx.setMaxAge(120+rand.nextInt(90));
@@ -207,7 +207,7 @@ public class EntityTameBall extends EntityThrowableUsefull
 				entityfx.setMaxAge(30+rand.nextInt(30));
 				entityfx.spawnAsWeatherEffect();*/
 				double speed = 0.01D;
-				EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextDouble(), posY + 0.2D + rand.nextDouble() * 0.2D, posZ + rand.nextDouble(), (rand.nextDouble() - rand.nextDouble()) * speed, 0.03D, (rand.nextDouble() - rand.nextDouble()) * speed);
+				EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextFloat(), posY + 0.2D + rand.nextFloat() * 0.2D, posZ + rand.nextFloat(), (rand.nextFloat() - rand.nextFloat()) * speed, 0.03D, (rand.nextFloat() - rand.nextFloat()) * speed);
 	        	pm.setParticleRandoms(entityfx, true, true);
 	        	pm.setParticleFire(entityfx);
 				entityfx.setMaxAge(220+rand.nextInt(90));

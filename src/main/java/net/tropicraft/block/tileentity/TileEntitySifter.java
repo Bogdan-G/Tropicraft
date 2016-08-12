@@ -43,7 +43,7 @@ public class TileEntitySifter extends TileEntity {
     public ItemStack siftItem;
 
     public TileEntitySifter() {
-        rand = new Random();
+        rand = new org.bogdang.modifications.random.XSTR();
         currentSiftTime = SIFT_TIME;
     }
 
@@ -61,9 +61,9 @@ public class TileEntitySifter extends TileEntity {
 
         // Done sifting
         if (!worldObj.isRemote && isSifting && currentSiftTime <= 0) {
-            double x = this.xCoord + worldObj.rand.nextDouble()*1.4;
-            double y = this.yCoord + worldObj.rand.nextDouble()*1.4;
-            double z = this.zCoord + worldObj.rand.nextDouble()*1.4;
+            double x = this.xCoord + worldObj.rand.nextFloat()*1.4;
+            double y = this.yCoord + worldObj.rand.nextFloat()*1.4;
+            double z = this.zCoord + worldObj.rand.nextFloat()*1.4;
 
             dumpResults(x, y, z, isHeatedSifter() ? SiftType.HEATED : SiftType.REGULAR);
 

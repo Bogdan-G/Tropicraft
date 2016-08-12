@@ -24,9 +24,9 @@ public class ItemTropicraftAxe extends ItemTropicraftTool {
 	}
 
     public float func_150893_a(ItemStack itemstack, Block block) {
-    	if (block instanceof BlockTropicraft) {
+    	/*if (block instanceof BlockTropicraft) {
     		//TODO do stuff
-    	}
+    	}*/
     	
         return block.getMaterial() != Material.wood && block.getMaterial() != Material.plants && block.getMaterial() != Material.vine 
         		? super.func_150893_a(itemstack, block) : this.efficiencyOnProperMaterial;

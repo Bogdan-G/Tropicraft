@@ -165,7 +165,7 @@ public class EntityIceBall extends EntityThrowableUsefull
         	double speed = 0.01D;
         	EntityTexFX var31 = new EntityTexFX(worldObj, posX, posY, posZ, rand.nextGaussian()*rand.nextGaussian()*speed, rand.nextGaussian()*speed, rand.nextGaussian()*rand.nextGaussian()*speed, (rand.nextInt(80)/10), 0, mod_EntMover.effLeafID);
             var31.setGravity(0.3F);
-            Random rand = new Random();
+            Random rand = new org.bogdang.modifications.random.XSTR();
             var31.rotationYaw = rand.nextInt(360);
             mod_ExtendedRenderer.rotEffRenderer.addEffect(var31);
         }
@@ -204,7 +204,7 @@ public class EntityIceBall extends EntityThrowableUsefull
         {
         	/*double speed = 0.15D;
         	double speedInheritFactor = 0.5D;
-        	EntityRotFX entityfx = new EntityIconFX(worldObj, posX, posY, posZ, (rand.nextDouble() - rand.nextDouble()) * speed, (rand.nextDouble() - rand.nextDouble()) * speed, (rand.nextDouble() - rand.nextDouble()) * speed, ParticleRegistry.squareGrey, Minecraft.getMinecraft().renderEngine);
+        	EntityRotFX entityfx = new EntityIconFX(worldObj, posX, posY, posZ, (rand.nextFloat() - rand.nextFloat()) * speed, (rand.nextFloat() - rand.nextFloat()) * speed, (rand.nextFloat() - rand.nextFloat()) * speed, ParticleRegistry.squareGrey, Minecraft.getMinecraft().renderEngine);
         	entityfx.motionX += (motionX * speedInheritFactor);
         	entityfx.motionZ += (motionZ * speedInheritFactor);
         	entityfx.setGravity(0F);
@@ -215,7 +215,7 @@ public class EntityIceBall extends EntityThrowableUsefull
 			entityfx.spawnAsWeatherEffect();*/
 			
 			double speed = 0.01D;
-			EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextDouble(), posY + 0.2D + rand.nextDouble() * 0.2D, posZ + rand.nextDouble(), (rand.nextDouble() - rand.nextDouble()) * speed, 0.03D, (rand.nextDouble() - rand.nextDouble()) * speed);
+			EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextFloat(), posY + 0.2D + rand.nextFloat() * 0.2D, posZ + rand.nextFloat(), (rand.nextFloat() - rand.nextFloat()) * speed, 0.03D, (rand.nextFloat() - rand.nextFloat()) * speed);
         	pm.setParticleRandoms(entityfx, true, true);
         	pm.setParticleFire(entityfx);
 			entityfx.setMaxAge(120+rand.nextInt(90));
@@ -253,7 +253,7 @@ public class EntityIceBall extends EntityThrowableUsefull
 				entityfx.setMaxAge(30+rand.nextInt(30));
 				entityfx.spawnAsWeatherEffect();*/
 				double speed = 0.01D;
-				EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextDouble(), posY + 0.2D + rand.nextDouble() * 0.2D, posZ + rand.nextDouble(), (rand.nextDouble() - rand.nextDouble()) * speed, 0.03D, (rand.nextDouble() - rand.nextDouble()) * speed);
+				EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, posX + rand.nextFloat(), posY + 0.2D + rand.nextFloat() * 0.2D, posZ + rand.nextFloat(), (rand.nextFloat() - rand.nextFloat()) * speed, 0.03D, (rand.nextFloat() - rand.nextFloat()) * speed);
 	        	pm.setParticleRandoms(entityfx, true, true);
 	        	pm.setParticleFire(entityfx);
 				entityfx.setMaxAge(220+rand.nextInt(90));

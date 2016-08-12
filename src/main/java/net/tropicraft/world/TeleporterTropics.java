@@ -44,7 +44,7 @@ public class TeleporterTropics extends Teleporter {
 		PORTAL_BLOCK = TCBlockRegistry.tropicsPortal;
 		PORTAL_WALL_BLOCK = TCBlockRegistry.tropicsPortalWall;
 		this.world = world;
-		this.random = new Random(world.getSeed());
+		this.random = new org.bogdang.modifications.random.XSTR(world.getSeed());
 	}
 
 	@Override
@@ -150,8 +150,8 @@ public class TeleporterTropics extends Teleporter {
 				newLocZ += 0.5D;
 			}
 			entity.setLocationAndAngles(newLocX, newLocY + 2, newLocZ, entity.rotationYaw, 0.0F);
-			int worldSpawnX = MathHelper.floor_double(newLocX);//TODO + ((new Random()).nextBoolean() ? 3 : -3);
-			int worldSpawnZ = MathHelper.floor_double(newLocZ);//TODO + ((new Random()).nextBoolean() ? 3 : -3);
+			int worldSpawnX = MathHelper.floor_double(newLocX);//TODO + ((new org.bogdang.modifications.random.XSTR()).nextBoolean() ? 3 : -3);
+			int worldSpawnZ = MathHelper.floor_double(newLocZ);//TODO + ((new org.bogdang.modifications.random.XSTR()).nextBoolean() ? 3 : -3);
 			int worldSpawnY = world.getHeightValue(worldSpawnX, worldSpawnZ) + 3;
 
 			entity.motionX = entity.motionY = entity.motionZ = 0.0D;
@@ -276,15 +276,15 @@ public class TeleporterTropics extends Teleporter {
 				}
 		}
 
-		int worldSpawnX = MathHelper.floor_double(foundX);//TODO + ((new Random()).nextBoolean() ? 3 : -3);
-		int worldSpawnZ = MathHelper.floor_double(foundZ);//TODO + ((new Random()).nextBoolean() ? 3 : -3);
+		int worldSpawnX = MathHelper.floor_double(foundX);//TODO + ((new org.bogdang.modifications.random.XSTR()).nextBoolean() ? 3 : -3);
+		int worldSpawnZ = MathHelper.floor_double(foundZ);//TODO + ((new org.bogdang.modifications.random.XSTR()).nextBoolean() ? 3 : -3);
 		int worldSpawnY = getTerrainHeightAt(worldSpawnX, worldSpawnZ);//world.getHeightValue(worldSpawnX, worldSpawnZ) - 2;
 		
 	      // If we can't find a spot (e.g. we're in the middle of the ocean),
         // just put the portal at sea level
         if(closestSpot < 0.0D) {
             // Perhaps this was the culprit
-            /*  Random r = new Random();
+            /*  Random r = new org.bogdang.modifications.random.XSTR();
             foundX += r.nextInt(16) - 8;
             foundZ += r.nextInt(16) - 8;*/
             foundY = worldSpawnY - 2;

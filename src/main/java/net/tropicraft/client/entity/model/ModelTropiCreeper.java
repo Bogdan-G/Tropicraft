@@ -104,10 +104,11 @@ public class ModelTropiCreeper extends ModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, ent);
         head.rotateAngleY = f3 / 57.29578F;
         head.rotateAngleX = f4 / 57.29578F;
-        leg1.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-        leg2.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1;
-        leg3.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1;
-        leg4.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+        float temp1 = f * 0.6662F;float temp2 = temp1 + 3.141593F;float temp3 = 1.4F * f1;
+        leg1.rotateAngleX = MathHelper.cos(temp1) * temp3;
+        leg2.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        leg3.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        leg4.rotateAngleX = MathHelper.cos(temp1) * temp3;
         hat1.rotateAngleX = hat2.rotateAngleX = hat3.rotateAngleX = head.rotateAngleX / 6.234234234234F;
         hat1.rotateAngleY = hat2.rotateAngleY = hat3.rotateAngleY = head.rotateAngleY / 6.2342342344F;
     }

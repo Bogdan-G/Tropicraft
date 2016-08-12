@@ -82,9 +82,10 @@ public class ModelTreeFrog extends ModelBase {
 
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
-        frontleft_leg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-        rear_left_leg.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1;
-        rear_right_leg.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1;
-        frontright_leg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+        float temp1 = f * 0.6662F;float temp2 = temp1 + 3.141593F;float temp3 = 1.4F * f1;
+        frontleft_leg.rotateAngleX = MathHelper.cos(temp1) * temp3;
+        rear_left_leg.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        rear_right_leg.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        frontright_leg.rotateAngleX = MathHelper.cos(temp1) * temp3;
     }
 }

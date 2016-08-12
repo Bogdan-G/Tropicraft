@@ -26,6 +26,7 @@ public class ModelKoaMan extends ModelBase {
     public ModelRenderer leaf9;
     public ModelRenderer leaf10;
     public ModelRenderer armband11;
+    private float math_pi = 3.141593F;
 
     public ModelKoaMan() {
         
@@ -199,13 +200,15 @@ public class ModelKoaMan extends ModelBase {
         leaf.rotateAngleZ = leaf3.rotateAngleZ = leaf2.rotateAngleZ = leaf4.rotateAngleZ = leaf5.rotateAngleZ = leaf6.rotateAngleZ = leaf7.rotateAngleZ =
                 leaf8.rotateAngleZ = leaf9.rotateAngleZ = leaf10.rotateAngleZ = headband.rotateAngleZ = bipedHead.rotateAngleZ;
         //a(headband, bipedHead);
-        bipedRightArm.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 2.0F * f1 * 0.5F;
-        bipedLeftArm.rotateAngleX = MathHelper.cos(f * 0.6662F) * 2.0F * f1 * 0.5F;
+        float temp1 = f * 0.6662F;float temp2 = temp1 + math_pi;float temp3 = 2.0F * f1 * 0.5F;
+        bipedRightArm.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        bipedLeftArm.rotateAngleX = MathHelper.cos(temp1) * temp3;
         bipedRightArm.rotateAngleZ = 0.0F;
         bipedLeftArm.rotateAngleZ = 0.0F;
         a(armband1, bipedRightArm);
-        bipedRightLeg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-        bipedLeftLeg.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1;
+        float temp4 = 1.4F * f1;
+        bipedRightLeg.rotateAngleX = MathHelper.cos(temp1) * temp4;
+        bipedLeftLeg.rotateAngleX = MathHelper.cos(temp2) * temp4;
         bipedRightLeg.rotateAngleY = 0.0F;
         bipedLeftLeg.rotateAngleY = 0.0F;
 
@@ -229,7 +232,7 @@ public class ModelKoaMan extends ModelBase {
         a(armband11, bipedLeftArm);
         if (onGround > -9990F) {
             float f6 = onGround;
-            bipedBody.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(f6) * 3.141593F * 2.0F) * 0.2F;
+            bipedBody.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(f6) * math_pi * 2.0F) * 0.2F;
             bipedRightArm.rotationPointZ = MathHelper.sin(bipedBody.rotateAngleY) * 5F;
             bipedRightArm.rotationPointX = -MathHelper.cos(bipedBody.rotateAngleY) * 5F;
             a(armband1, bipedRightArm);
@@ -246,11 +249,11 @@ public class ModelKoaMan extends ModelBase {
             f6 *= f6;
             f6 *= f6;
             f6 = 1.0F - f6;
-            float f7 = MathHelper.sin(f6 * 3.141593F);
-            float f8 = MathHelper.sin(onGround * 3.141593F) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+            float f7 = MathHelper.sin(f6 * math_pi);
+            float f8 = MathHelper.sin(onGround * math_pi) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
             bipedRightArm.rotateAngleX -= (double) f7 * 1.2D + (double) f8;
             bipedRightArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-            bipedRightArm.rotateAngleZ = MathHelper.sin(onGround * 3.141593F) * -0.4F;
+            bipedRightArm.rotateAngleZ = MathHelper.sin(onGround * math_pi) * -0.4F;
             a(armband1, bipedRightArm);
             a(armband11, bipedLeftArm);
         }

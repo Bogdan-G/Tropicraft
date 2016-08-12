@@ -276,7 +276,7 @@ public class JobTrade extends JobBase {
 		
 		if (activeTrader != null) {
 			ent.faceEntity(activeTrader, 15, 15);
-		} else if (tradeBlockPos != null) {
+		//} else if (tradeBlockPos != null) {
 			//ai.faceCoord(tradeBlockPos.posX, tradeBlockPos.posY, tradeBlockPos.posZ, 15, 15);
 		}
 		
@@ -284,7 +284,7 @@ public class JobTrade extends JobBase {
 			
 			//EntityPlayer clPl = ent.worldObj.getClosestPlayerToEntity(ent, 5F);
 			
-			Random rand = new Random();
+			Random rand = new org.bogdang.modifications.random.XSTR();
 			
 			if (tradeBlockPos != null && ent.worldObj.rand.nextInt(100) == 0) {
 				int tryX = tradeBlockPos.posX;// - 1 + rand.nextInt(2);

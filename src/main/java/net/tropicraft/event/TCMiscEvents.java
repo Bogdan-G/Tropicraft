@@ -62,7 +62,7 @@ public class TCMiscEvents {
 		
 		World world = FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(0);
 
-		if (world != null && world instanceof WorldServer) {
+		if (/*world != null && */world instanceof WorldServer) {
 			for (int ii = 0; ii < world.playerEntities.size(); ii++) {
 				Entity entity1 = (Entity)world.playerEntities.get(ii);
 

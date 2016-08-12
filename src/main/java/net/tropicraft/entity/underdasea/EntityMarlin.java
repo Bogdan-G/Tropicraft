@@ -95,9 +95,9 @@ public class EntityMarlin extends EntityTropicraftWaterMob {
 	@Override
 	public void applyEntityCollision(Entity entity) {
 		super.applyEntityCollision(entity);
-		if (isSurfacing) {
+		/*if (isSurfacing) {
 			//entity.attackEntityFrom(DamageSource.causeMobDamage(this), attackStrength());
-		}
+		}*/
 	}
 
 	@Override

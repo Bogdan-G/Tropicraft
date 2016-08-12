@@ -77,10 +77,10 @@ public class EntityLostMask extends Entity implements WindHandler{
 	}
 	@Override
 	protected void entityInit() {
-        this.dataWatcher.addObject(17, new Integer(0));
-        this.dataWatcher.addObject(18, new Integer(0));
-        this.dataWatcher.addObject(19, new Integer(0));
-        this.dataWatcher.addObject(20, new Integer(0));
+        this.dataWatcher.addObject(17, (int)0);
+        this.dataWatcher.addObject(18, (int)0);
+        this.dataWatcher.addObject(19, (int)0);
+        this.dataWatcher.addObject(20, (int)0);
 		
 	}
 
@@ -132,15 +132,15 @@ public class EntityLostMask extends Entity implements WindHandler{
 		this.entityDropItem(new ItemStack(TCItemRegistry.ashenMask, 1, getColor()), 0.0F);
 	}
 	private void setRotator(int[] a){
-		this.dataWatcher.updateObject(18, new Integer(a[0]));
-		this.dataWatcher.updateObject(19, new Integer(a[1]));
-		this.dataWatcher.updateObject(20, new Integer(a[2]));
+		this.dataWatcher.updateObject(18, a[0]);
+		this.dataWatcher.updateObject(19, a[1]);
+		this.dataWatcher.updateObject(20, a[2]);
 	}
 	public int[] getRotator(){
 		return new int[]{this.dataWatcher.getWatchableObjectInt(18), this.dataWatcher.getWatchableObjectInt(19), this.dataWatcher.getWatchableObjectInt(20)};
 	}
 	private void setType(int i){
-		this.dataWatcher.updateObject(17, new Integer(i));
+		this.dataWatcher.updateObject(17, i);
 	}	
 	
 	

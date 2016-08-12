@@ -111,7 +111,7 @@ public class TileEntityCurareBowl extends TileEntity {
         
         ItemStack stack = getCurareResult(getResult(stacks));
         
-        EntityItem result = new EntityItem(worldObj, xCoord, yCoord + (new Random().nextInt(1) + 0.3), zCoord, stack);
+        EntityItem result = new EntityItem(worldObj, xCoord, yCoord + (new org.bogdang.modifications.random.XSTR().nextInt(1) + 0.3), zCoord, stack);
 
         if (!worldObj.isRemote) {
             worldObj.spawnEntityInWorld(result);

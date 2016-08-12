@@ -27,6 +27,7 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
     public boolean hasBeenPlaced;
     public static final String[] names = {"Clownfish", "Queen Angelfish", "Yellow Tang", "Butterflyfish", "Geophagus Surinamensis", "Betta Fish"
         , "Regal Tang", "Royal Gamma"};
+    private float math_pi = 3.141593F;
 
     /**
      * Constant used in the datawatcher so this fish knows whether it should spawn a school or not
@@ -85,14 +86,14 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
         setColor(i);
         setSize(.4F, .85F);         
         setLocationAndAngles(entityliving.posX, entityliving.posY + (double)entityliving.getEyeHeight(), entityliving.posZ, entityliving.rotationYaw, entityliving.rotationPitch);
-        posX -= MathHelper.cos((rotationYaw / 180F) * 3.141593F) * 0.16F;
+        posX -= MathHelper.cos((rotationYaw / 180F) * math_pi) * 0.16F;
         posY -= 0.10000000149011612D;
-        posZ -= MathHelper.sin((rotationYaw / 180F) * 3.141593F) * 0.16F;
+        posZ -= MathHelper.sin((rotationYaw / 180F) * math_pi) * 0.16F;
         setPosition(posX, posY, posZ);
         yOffset = 0.0F;
-        motionX = -MathHelper.sin((rotationYaw / 180F) * 3.141593F) * MathHelper.cos((rotationPitch / 180F) * 3.141593F);
-        motionZ = MathHelper.cos((rotationYaw / 180F) * 3.141593F) * MathHelper.cos((rotationPitch / 180F) * 3.141593F);
-        motionY = -MathHelper.sin((rotationPitch / 180F) * 3.141593F);
+        motionX = -MathHelper.sin((rotationYaw / 180F) * math_pi) * MathHelper.cos((rotationPitch / 180F) * math_pi);
+        motionZ = MathHelper.cos((rotationYaw / 180F) * math_pi) * MathHelper.cos((rotationPitch / 180F) * math_pi);
+        motionY = -MathHelper.sin((rotationPitch / 180F) * math_pi);
 
     }
 
@@ -111,10 +112,13 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
         setColor(original.getColor());
         yOffset = 0.0F;
         setSize(original.width, original.height);
+        Random temp1 = new org.bogdang.modifications.random.XSTR();
+        Random temp2 = new org.bogdang.modifications.random.XSTR();
+        Random temp3 = new org.bogdang.modifications.random.XSTR();
         do {
-            double offsetX = (new Random()).nextDouble() * 3 - 1.5D;
-            double offsetY = (new Random()).nextDouble() * 2 + 1.0D;
-            double offsetZ = (new Random()).nextDouble() * 3 - 1.5D;
+            float offsetX = temp1.nextFloat() * 3f - 1.5F;
+            float offsetY = temp2.nextFloat() * 2f + 1.0F;
+            float offsetZ = temp3.nextFloat() * 3f - 1.5F;
             setLocationAndAngles(original.posX + offsetX, original.posY + offsetY, original.posZ + offsetZ, original.rotationYaw, original.rotationPitch);
         } while (!getCanSpawnHere());
         motionX = original.motionX;
@@ -127,7 +131,7 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
     {
         super.entityInit(); 
 
-        dataWatcher.addObject(16, new Integer(0));   
+        dataWatcher.addObject(16, (int)0);   
         dataWatcher.addObject(SHOULD_SPAWN_DATAWATCHER, Integer.valueOf(-1));
     }
 
@@ -238,16 +242,16 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
 
         if (getShouldSpawnSchool()/*shouldSpawnSchool*/) {
             // Note: min/max values include this fish
-            int maxInSchool = 7;
+            /*int maxInSchool = 7;
             int minInSchool = 4;
-            int numToSpawn = (new Random()).nextInt(1 + maxInSchool - minInSchool) + minInSchool - 1;
+            int numToSpawn = (new org.bogdang.modifications.random.XSTR()).nextInt(1 + maxInSchool - minInSchool) + minInSchool - 1;
             for (int i = 0; i < numToSpawn; i++) {
                 if (!worldObj.isRemote) {
                     continue;
                     //EntityTropicalFish fish = new EntityTropicalFish(this);
                     //worldObj.spawnEntityInWorld(fish);
                 }
-            }
+            }*/
             setShouldSpawnSchool(false);
             //shouldSpawnSchool = false;
         }
@@ -269,7 +273,7 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
         if(!inSchool || isLeader){
             super.updateEntityActionState();
         }
-        else if(inSchool && leader != null){
+        else if(/*inSchool && */leader != null){
 
             if(getDistanceToEntity(leader)>= 2.25F && ticksExisted % 40 == 0){
                 inSchool = false;

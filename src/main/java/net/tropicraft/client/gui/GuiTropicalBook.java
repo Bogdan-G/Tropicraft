@@ -266,7 +266,7 @@ public class GuiTropicalBook extends GuiScreen {
 			drawTexturedModalRect(width / 2 - 162, height / 2 - 115, 145, 201, 111, 32);
 			GL11.glPopMatrix();
 			fontRendererObj.drawString("Table of Contents", width / 2 - 150, height / 2 - 110, 0x440000);
-			fontRendererObj.drawString(""+(1+indexPage), width / 2 - 159, height / 2 + 93, 0x440000);
+			fontRendererObj.drawString(String.valueOf(1+indexPage), width / 2 - 159, height / 2 + 93, 0x440000);
 			if (book.hasIndexIcons()) {
 				addIcons();
 			}

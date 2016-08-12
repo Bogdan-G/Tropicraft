@@ -42,7 +42,7 @@ public class MapGenUndergroundGrove {
 		
 		isActive = true;
 		
-    	Random rand = new Random(worldObj.getSeed() * centerX + centerZ * 57647382913L);
+    	Random rand = new org.bogdang.modifications.random.XSTR(worldObj.getSeed() * centerX + centerZ * 57647382913L);
     	
     	RidgedMulti ridged = new RidgedMulti(rand.nextLong(), 1);
     	ridged.frequency = 0.0325;
@@ -82,7 +82,7 @@ public class MapGenUndergroundGrove {
     			
     			if((i + x) % 16 == 0 && (k + z) % 16 == 0) {
     				int j = (int)Math.sqrt(height - ((height * relativeX) / length) - ((height * relativeZ) / width));
-    				rand.setSeed(i * k * 54325432 * worldObj.getSeed() * relativeX * centerX);
+    				rand.setSeed(i * k * 54325432L * worldObj.getSeed() * relativeX * centerX);
     				if(getBlock(i, y - j, k, blocks) == Blocks.air && getBlock(i, y - j + 1, k, blocks) == Blocks.air && getBlock(i, y - j + 2, k, blocks) == Blocks.air && rand.nextInt(3) != 0) {
     					placeBlockAndMeta(i, y - j, k, TCBlockRegistry.tikiTorch, 1, blocks, metas);
     					placeBlockAndMeta(i, y - j + 1, k, TCBlockRegistry.tikiTorch, 1, blocks, metas);
@@ -128,7 +128,7 @@ public class MapGenUndergroundGrove {
         int randX = i / numChunks;
         int randZ = j / numChunks;
         long seed = (long)randX * 341832132712L + (long)randZ * 422843987541L + worldObj.getWorldInfo().getSeed() + (long)42231726;
-        Random rand = new Random(seed);
+        Random rand = new org.bogdang.modifications.random.XSTR(seed);
         randX *= numChunks;
         randZ *= numChunks;
         randX += rand.nextInt(numChunks - offsetChunks);
@@ -153,7 +153,7 @@ public class MapGenUndergroundGrove {
         int range = 4;
         for(int x = i - range; x <= i + range; x++) {
             for(int z = j - range; z <= j + range; z++) {
-            	Random rand = new Random(worldObj.getSeed() * x + z * 57647382913L);
+            	Random rand = new org.bogdang.modifications.random.XSTR(worldObj.getSeed() * x + z * 57647382913L);
                 if (canGenGroveAtCoords(worldObj, x, z)) {
                     return new ChunkCoordinates(x * 16 + 8, rand.nextInt(5) + 20, z * 16 + 8);
                 }

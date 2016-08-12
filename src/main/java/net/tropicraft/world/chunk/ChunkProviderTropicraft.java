@@ -54,7 +54,7 @@ public class ChunkProviderTropicraft implements IChunkProvider { //NOTE: THIS WI
 
 	public ChunkProviderTropicraft(World worldObj, long seed, boolean par4) {
 		this.worldObj = worldObj;
-		this.rand = new Random(seed);
+		this.rand = new org.bogdang.modifications.random.XSTR(seed);
 
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -410,9 +410,9 @@ public class ChunkProviderTropicraft implements IChunkProvider { //NOTE: THIS WI
 						}
 						if(flag)
 						{
-							if(a < 5) {
+							//if(a < 5) {
 								blockUsed = btop;
-							}
+							//}
 						}
 						else
 						{
@@ -422,7 +422,7 @@ public class ChunkProviderTropicraft implements IChunkProvider { //NOTE: THIS WI
 								{
 									blockUsed = top;
 								}
-								else if(a < 5)
+								else// if(a < 5)
 								{
 									blockUsed = filler;
 								}

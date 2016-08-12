@@ -7,6 +7,8 @@ import net.minecraft.util.MathHelper;
 
 public class ModelFailgull extends ModelBase
 {
+	private float math_pi = 3.141593F;
+
 	ModelRenderer BaseFootLeft;
 	ModelRenderer BaseFootRight;
 	ModelRenderer LowerLeg1;
@@ -122,7 +124,7 @@ public class ModelFailgull extends ModelBase
 	{
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 		LowerLeg1.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-		LowerLeg11.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1;
+		LowerLeg11.rotateAngleX = MathHelper.cos(f * 0.6662F + math_pi) * 1.4F * f1;
 		RightWing.rotateAngleZ = f2;
 		RightWing1.rotateAngleZ = -f2;		//left wing
 	}

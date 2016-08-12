@@ -41,7 +41,7 @@ public abstract class EntityAshen extends EntityMob implements IRangedAttackMob 
     public EntityAshen(World par1World) {
         super(par1World);
         setSize(0.5F, 1.3F);      
-        setMaskType(new Random().nextInt(7));
+        setMaskType(new org.bogdang.modifications.random.XSTR().nextInt(7));
         actionPicker = 0;
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new AIAshenChaseAndPickupLostMask(this, 1.0D));
@@ -56,8 +56,8 @@ public abstract class EntityAshen extends EntityMob implements IRangedAttackMob 
     @Override
     protected void entityInit() {
         super.entityInit();        
-        dataWatcher.addObject(DATAWATCHER_MASK_TYPE, new Integer(0));
-        dataWatcher.addObject(DATAWATCHER_ACTION_STATE, new Integer(0));  
+        dataWatcher.addObject(DATAWATCHER_MASK_TYPE, (int)0);
+        dataWatcher.addObject(DATAWATCHER_ACTION_STATE, (int)0);  
     }
 
     @Override
@@ -76,7 +76,7 @@ public abstract class EntityAshen extends EntityMob implements IRangedAttackMob 
     }
     
     public void setMaskType(int type) {
-        this.dataWatcher.updateObject(DATAWATCHER_MASK_TYPE, new Integer(type));
+        this.dataWatcher.updateObject(DATAWATCHER_MASK_TYPE, type);
     }
     
     public int getMaskType() {
@@ -84,7 +84,7 @@ public abstract class EntityAshen extends EntityMob implements IRangedAttackMob 
     }
     
     public void setActionState(int state) {
-        this.dataWatcher.updateObject(DATAWATCHER_ACTION_STATE, new Integer(state));
+        this.dataWatcher.updateObject(DATAWATCHER_ACTION_STATE, state);
     }
     
     public int getActionState() {

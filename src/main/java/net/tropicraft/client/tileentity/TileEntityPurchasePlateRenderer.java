@@ -62,7 +62,7 @@ public class TileEntityPurchasePlateRenderer extends TileEntitySpecialRenderer
 	    				name += " x" + is.stackSize;
 	    			}
 	    			if (name.startsWith("item.")) name = name.substring(5);
-	    			renderLivingLabel("" + name, par2+0.5F, par4 + 0.45F, par6+0.5F, 0);
+	    			renderLivingLabel(name, par2+0.5F, par4 + 0.45F, par6+0.5F, 0);
 	    		}
     		//}
     		//renderLivingLabel("cost: " + ValuedItems.getBuyableItemCostByIndex(par1TileEntityMobSpawner.itemIndex), par2+0.5F, par4 + 0.0F, par6+0.5F, 0);

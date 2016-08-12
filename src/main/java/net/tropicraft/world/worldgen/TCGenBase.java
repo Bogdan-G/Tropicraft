@@ -543,6 +543,6 @@ public abstract class TCGenBase extends WorldGenerator {
 	 */
 	public double randAngle()
 	{
-		return rand.nextDouble() * 3.1415926535897931D * 2D;
+		return rand.nextFloat() * 3.1415926535897931D * 2D;
 	}
 }

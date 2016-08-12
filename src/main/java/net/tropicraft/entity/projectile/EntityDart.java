@@ -113,9 +113,9 @@ public class EntityDart extends Entity implements IProjectile {
             --this.dartShake;
         }
         
-        if (!worldObj.isRemote) {
+        /*if (!worldObj.isRemote) {
         	//System.out.println("motion: " + motionX + " - " + motionZ);
-        }
+        }*/
 
         if (this.inGround) {
             this.setDead();
@@ -356,8 +356,8 @@ public class EntityDart extends Entity implements IProjectile {
     @Override
     protected void entityInit() {
         potions = new int[]{Potion.blindness.id, Potion.poison.id, Potion.moveSlowdown.id, Potion.harm.id, Potion.confusion.id, Potion.hunger.id, Potion.weakness.id};
-        dataWatcher.addObject(17, new Short(MAX_HIT_TIME));
-        dataWatcher.addObject(18, new Byte((byte) 0));
+        dataWatcher.addObject(17, MAX_HIT_TIME);
+        dataWatcher.addObject(18, (byte)0);
     }
 
     @Override
@@ -381,7 +381,7 @@ public class EntityDart extends Entity implements IProjectile {
     }
 
     public void setIsHit(boolean set) {
-        dataWatcher.updateObject(18, new Byte((byte) (set ? 1 : 0)));
+        dataWatcher.updateObject(18, (byte)(set ? 1 : 0));
     }
 
     public boolean getIsHit() {
@@ -389,7 +389,7 @@ public class EntityDart extends Entity implements IProjectile {
     }
 
     public void setHitTimer(short hitTime) {
-        dataWatcher.updateObject(17, new Short(hitTime));
+        dataWatcher.updateObject(17, hitTime);
     }
 
     public int getHitTimer() {

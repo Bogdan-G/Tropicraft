@@ -98,10 +98,10 @@ public class EntityUmbrella extends Entity {
 
 	@Override
 	protected void entityInit() {
-		this.dataWatcher.addObject(DATAWATCHER_COLOR, new Integer(ColorHelper.DEFAULT_VALUE));
-		this.dataWatcher.addObject(DATAWATCHER_DAMAGE, new Float(0));
-		this.dataWatcher.addObject(DATAWATCHER_TIME_SINCE_HIT, new Integer(0));
-		this.dataWatcher.addObject(DATAWATCHER_ROCK_DIRECTION, new Integer(0));
+		this.dataWatcher.addObject(DATAWATCHER_COLOR, ColorHelper.DEFAULT_VALUE);
+		this.dataWatcher.addObject(DATAWATCHER_DAMAGE, 0f);
+		this.dataWatcher.addObject(DATAWATCHER_TIME_SINCE_HIT, (int)0);
+		this.dataWatcher.addObject(DATAWATCHER_ROCK_DIRECTION, (int)0);
 	}
 	
 	@SideOnly(Side.CLIENT)

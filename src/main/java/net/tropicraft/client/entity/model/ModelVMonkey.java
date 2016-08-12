@@ -27,6 +27,8 @@ public class ModelVMonkey extends ModelBase {
     public ModelRenderer Head;
     protected Random rand;
     public float herps;
+    private float math_pi = 3.141593F;
+    private float math_pi_0_5 = 1.570796F;
 
     public ModelVMonkey() {
 
@@ -34,7 +36,7 @@ public class ModelVMonkey extends ModelBase {
         body.addBox(-1F, -2F, -4F, 2, 4, 9, 0F);
         body.setRotationPoint(0F, 16F, 0F);
         body.rotateAngleX = 0F;
-        body.rotateAngleY = 3.141593F;
+        body.rotateAngleY = math_pi;
         body.rotateAngleZ = 0F;
         body.mirror = false;
         lLegUpper = new ModelRenderer(this, 7, 0);
@@ -69,21 +71,21 @@ public class ModelVMonkey extends ModelBase {
         tailBase.addBox(-0.5F, -4F, -0.5F, 1, 3, 1, 0F);
         tailBase.setRotationPoint(0F, 15F, 3.5F);
         tailBase.rotateAngleX = 0F;
-        tailBase.rotateAngleY = 3.141593F;
+        tailBase.rotateAngleY = math_pi;
         tailBase.rotateAngleZ = 0F;
         tailBase.mirror = false;
         tailMid = new ModelRenderer(this, 20, 24);
         tailMid.addBox(-0.5F, -2F, -0.5F, 1, 2, 1, 0F);
         tailMid.setRotationPoint(0F, 11F, 3.5F);
         tailMid.rotateAngleX = 0F;
-        tailMid.rotateAngleY = 3.141593F;
+        tailMid.rotateAngleY = math_pi;
         tailMid.rotateAngleZ = 0F;
         tailMid.mirror = false;
         tailTop = new ModelRenderer(this, 20, 21);
         tailTop.addBox(-0.5F, -2F, -0.5F, 1, 2, 1, 0F);
         tailTop.setRotationPoint(0F, 9F, 3.5F);
         tailTop.rotateAngleX = 0F;
-        tailTop.rotateAngleY = 3.141593F;
+        tailTop.rotateAngleY = math_pi;
         tailTop.rotateAngleZ = 0F;
         tailTop.mirror = false;
         rArmLower = new ModelRenderer(this, 0, 7);
@@ -118,14 +120,14 @@ public class ModelVMonkey extends ModelBase {
         Face.addBox(-2F, -1F, 0F, 4, 4, 3, 0F);
         Face.setRotationPoint(0F, 15F, -5F);
         Face.rotateAngleX = 0F;
-        Face.rotateAngleY = 3.141593F;
+        Face.rotateAngleY = math_pi;
         Face.rotateAngleZ = 0F;
         Face.mirror = false;
         Head = new ModelRenderer(this, 25, 25);
         Head.addBox(-3F, -2F, 0F, 6, 5, 2, 0F);
         Head.setRotationPoint(0F, 15F, -5F);
         Head.rotateAngleX = 0F;
-        Head.rotateAngleY = 3.141593F;
+        Head.rotateAngleY = math_pi;
         Head.rotateAngleZ = 0F;
         Head.mirror = false;
     }
@@ -154,7 +156,7 @@ public class ModelVMonkey extends ModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, ent);
         Face.rotateAngleX = f4 / 57.29578F + herps;
-        Face.rotateAngleY = f3 / 57.29578F + 3.141593F;
+        Face.rotateAngleY = f3 / 57.29578F + math_pi;
         Head.rotateAngleX = Face.rotateAngleX;
         Head.rotateAngleY = Face.rotateAngleY;
     }
@@ -167,7 +169,7 @@ public class ModelVMonkey extends ModelBase {
 
             body.setRotationPoint(0F, 20F, 0F);
             body.rotateAngleX = 0.9320058F;
-            body.rotateAngleY = 3.141593F;
+            body.rotateAngleY = math_pi;
             lLegUpper.setRotationPoint(-1F, 16F, -1.5F);
             lLegUpper.rotateAngleX = -0.2792527F;
             rLegUpper.setRotationPoint(1F, 16F, -1.5F);
@@ -179,13 +181,13 @@ public class ModelVMonkey extends ModelBase {
             lArmUpper.rotateAngleX = -2.142043F;
             tailBase.setRotationPoint(0F, 22F, 2.466667F);
             tailBase.rotateAngleX = 1.902409F;
-            tailBase.rotateAngleY = 3.141593F;
+            tailBase.rotateAngleY = math_pi;
             tailMid.setRotationPoint(0F, 23.3F, 5.966667F);
-            tailMid.rotateAngleX = 1.570796F;
+            tailMid.rotateAngleX = math_pi_0_5;
             tailMid.rotateAngleY = 2.111848F;
             tailMid.rotateAngleZ = -0.2617994F;
             tailTop.setRotationPoint(-1F, 23.2F, 7F);
-            tailTop.rotateAngleX = 1.570796F;
+            tailTop.rotateAngleX = math_pi_0_5;
             tailTop.rotateAngleY = 0.8377581F;
             tailTop.rotateAngleZ = 0.01745329F;
             rArmLower.setRotationPoint(1F, 19F, -0.5F);
@@ -202,26 +204,26 @@ public class ModelVMonkey extends ModelBase {
 
         } else if (entityvmonkey.isClimbing) {
 
-            body.rotateAngleX = 1.570796F;
+            body.rotateAngleX = math_pi_0_5;
             body.setRotationPoint(0F, 16F, 0F);
             lLegUpper.setRotationPoint(-1F, 12F, 2F);
-            //lLegUpper.rotateAngleX = -1.570796F;	
+            //lLegUpper.rotateAngleX = -math_pi_0_5;	
             rLegUpper.setRotationPoint(1F, 12F, 2F);
-            //rLegUpper.rotateAngleX = -1.570796F;		
+            //rLegUpper.rotateAngleX = -math_pi_0_5;		
             rArmUpper.setRotationPoint(1F, 19.5F, 2F);
-            //rArmUpper.rotateAngleX = -1.570796F;		
+            //rArmUpper.rotateAngleX = -math_pi_0_5;		
             lArmUpper.setRotationPoint(-1F, 19.5F, 2F);
-            //lArmUpper.rotateAngleX = -1.570796F;		
+            //lArmUpper.rotateAngleX = -math_pi_0_5;		
             tailBase.setRotationPoint(0F, 19.5F, 0.5F);
-            tailBase.rotateAngleX = 1.570796F;
-            tailBase.rotateAngleY = 3.141593F;
+            tailBase.rotateAngleX = math_pi_0_5;
+            tailBase.rotateAngleY = math_pi;
             tailMid.setRotationPoint(0F, 19.5F, 4.5F);
 
-            tailMid.rotateAngleX = 1.570796F;
-            tailMid.rotateAngleY = 3.141593F;
+            tailMid.rotateAngleX = math_pi_0_5;
+            tailMid.rotateAngleY = math_pi;
             tailTop.setRotationPoint(0F, 19.5F, 6.5F);
-            tailTop.rotateAngleX = 1.570796F;
-            tailTop.rotateAngleY = 3.141593F;
+            tailTop.rotateAngleX = math_pi_0_5;
+            tailTop.rotateAngleY = math_pi;
             rArmLower.setRotationPoint(1F, 19.5F, -3F);
             //rArmLower.rotateAngleX = -0.6981317F;
             lArmLower.setRotationPoint(-1F, 19.5F, -3F);
@@ -231,15 +233,15 @@ public class ModelVMonkey extends ModelBase {
             rLegLower.setRotationPoint(1F, 12F, -3F);
             //rLegLower.rotateAngleX = -2.443461F;		
             Face.setRotationPoint(0F, 11F, 1F);
-            herps = 1.570796F;
+            herps = math_pi_0_5;
             Head.setRotationPoint(0F, 11F, 1F);
-            Head.rotateAngleX = 1.570796F;
+            Head.rotateAngleX = math_pi_0_5;
 
 
-            rLegUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - 1.570796F;
-            rArmUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - 1.570796F;
-            lArmUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - 1.570796F;
-            lLegUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - 1.570796F;
+            rLegUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - math_pi_0_5;
+            rArmUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - math_pi_0_5;
+            lArmUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - math_pi_0_5;
+            lLegUpper.rotateAngleX = MathHelper.cos(f * .5F) * .75F * f2 - math_pi_0_5;
             rLegLower.setRotationPoint(1F, 12F + (MathHelper.cos(rLegUpper.rotateAngleX) * 5), -3F - (5 + MathHelper.sin(rLegUpper.rotateAngleX) * 5));
             rArmLower.setRotationPoint(1F, 19.5F + (MathHelper.cos(rArmUpper.rotateAngleX) * 5), -3F - (5 + MathHelper.sin(rArmUpper.rotateAngleX) * 5));
             lArmLower.setRotationPoint(-1F, 19.5F + (MathHelper.cos(lArmUpper.rotateAngleX) * 5), -3F - (5 + MathHelper.sin(lArmUpper.rotateAngleX) * 5));
@@ -250,7 +252,7 @@ public class ModelVMonkey extends ModelBase {
             lArmLower.rotateAngleX = lArmUpper.rotateAngleX + 0.6981317F;
         } else {
             body.setRotationPoint(0F, 16F, 0F);
-            body.rotateAngleY = 3.141593F;
+            body.rotateAngleY = math_pi;
             body.rotateAngleX = 0F;
             lLegUpper.setRotationPoint(-1F, 14F, -3.5F);
             rLegUpper.setRotationPoint(1F, 14F, -3.5F);
@@ -258,23 +260,24 @@ public class ModelVMonkey extends ModelBase {
             lArmUpper.setRotationPoint(-1F, 14F, 3.5F);
             tailBase.setRotationPoint(0F, 15F, 3.5F);
             tailBase.rotateAngleX = 0F;
-            tailBase.rotateAngleY = 3.141593F;
+            tailBase.rotateAngleY = math_pi;
             tailBase.rotateAngleZ = 0F;
             tailMid.setRotationPoint(0F, 11F, 3.5F);
             tailMid.rotateAngleX = 0F;
-            tailMid.rotateAngleY = 3.141593F;
+            tailMid.rotateAngleY = math_pi;
             tailMid.rotateAngleZ = 0F;
             tailTop.setRotationPoint(0F, 9F, 3.5F);
             tailTop.rotateAngleX = 0F;
-            tailTop.rotateAngleY = 3.141593F;
+            tailTop.rotateAngleY = math_pi;
             tailTop.rotateAngleZ = 0F;
             Face.setRotationPoint(0F, 15F, -5F);
             Head.setRotationPoint(0F, 15F, -5F);
 
-            rLegUpper.rotateAngleX = MathHelper.cos(f * 0.6662F) * .75F * f1;
-            rArmUpper.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * .75F * f1;
-            lLegUpper.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * .75F * f1;
-            lArmUpper.rotateAngleX = MathHelper.cos(f * 0.6662F) * .75F * f1;
+            float temp1 = f * 0.6662F;
+            rLegUpper.rotateAngleX = MathHelper.cos(temp1) * .75F * f1;
+            rArmUpper.rotateAngleX = MathHelper.cos(temp1 + math_pi) * .75F * f1;
+            lLegUpper.rotateAngleX = MathHelper.cos(temp1 + math_pi) * .75F * f1;
+            lArmUpper.rotateAngleX = MathHelper.cos(temp1) * .75F * f1;
             rLegLower.setRotationPoint(1F, 19F - (5 - MathHelper.sin(rLegUpper.rotateAngleX + 1.570796327F) * 5), -3.5F - (MathHelper.cos(rLegUpper.rotateAngleX + 1.570796327F) * 5));
             rArmLower.setRotationPoint(1F, 19F - (5 - MathHelper.sin(rArmUpper.rotateAngleX + 1.570796327F) * 5), 3.5F - (MathHelper.cos(rArmUpper.rotateAngleX + 1.570796327F) * 5));
             lArmLower.setRotationPoint(-1F, 19F - (5 - MathHelper.sin(lArmUpper.rotateAngleX + 1.570796327F) * 5), 3.5F - (MathHelper.cos(lArmUpper.rotateAngleX + 1.570796327F) * 5));
@@ -284,14 +287,14 @@ public class ModelVMonkey extends ModelBase {
             lLegLower.rotateAngleX = lLegUpper.rotateAngleX;
             lArmLower.rotateAngleX = lArmUpper.rotateAngleX;
 
-            tailBase.rotateAngleX = MathHelper.cos(f * 0.6662F) * .50F * f1;
-            tailBase.rotateAngleZ = MathHelper.cos(f * 0.6662F) * .50F * f1;
+            tailBase.rotateAngleX = MathHelper.cos(temp1) * .50F * f1;
+            tailBase.rotateAngleZ = MathHelper.cos(temp1) * .50F * f1;
             tailMid.setRotationPoint(0F - (MathHelper.cos(tailBase.rotateAngleZ + ((float) Math.PI) / 2F) * 3), 11F + (3 - MathHelper.sin(tailBase.rotateAngleX + ((float) Math.PI) / 2F) * 3), 3.5F - (MathHelper.cos(tailBase.rotateAngleX + ((float) Math.PI) / 2F) * 3));
-            tailMid.rotateAngleX = tailBase.rotateAngleX + MathHelper.cos(f * 0.6662F) * .75F * f1;
-            tailMid.rotateAngleZ = tailBase.rotateAngleZ + MathHelper.cos(f * 0.6662F) * .75F * f1;
+            tailMid.rotateAngleX = tailBase.rotateAngleX + MathHelper.cos(temp1) * .75F * f1;
+            tailMid.rotateAngleZ = tailBase.rotateAngleZ + MathHelper.cos(temp1) * .75F * f1;
             tailTop.setRotationPoint(0F - (MathHelper.cos(tailMid.rotateAngleZ + ((float) Math.PI) / 2F) * 2), 9F + (2 - MathHelper.sin(tailMid.rotateAngleX + ((float) Math.PI) / 2F) * 2), 3.5F - (MathHelper.cos(tailMid.rotateAngleX + ((float) Math.PI) / 2F) * 2));
-            tailTop.rotateAngleX = tailMid.rotateAngleX + MathHelper.cos(f * 0.6662F) * 1.75F * f1;
-            tailTop.rotateAngleZ = tailMid.rotateAngleX + MathHelper.cos(f * 0.6662F) * 1.75F * f1;
+            tailTop.rotateAngleX = tailMid.rotateAngleX + MathHelper.cos(temp1) * 1.75F * f1;
+            tailTop.rotateAngleZ = tailMid.rotateAngleX + MathHelper.cos(temp1) * 1.75F * f1;
             herps = 0;
         }
 

@@ -68,7 +68,7 @@ public class SpiderAdult extends SpiderBase {
 	@Override
 	public IEntityLivingData onSpawnWithEgg(IEntityLivingData par1EntityLivingBaseData)
     {
-		Random rand = new Random();
+		Random rand = new org.bogdang.modifications.random.XSTR();
 		if (rand.nextInt(4) == 0) {
 			//System.out.println("Spider spawned as mother!");
 			isMother = true;

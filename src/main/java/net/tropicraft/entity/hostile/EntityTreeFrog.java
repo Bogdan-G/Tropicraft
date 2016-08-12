@@ -65,7 +65,7 @@ public abstract class EntityTreeFrog extends EntityTropicraftAnimal implements I
                     getNavigator().onUpdateNavigation();
                     
                     this.jump();
-                    this.motionY += -0.01D + rand.nextDouble() * 0.1D;
+                    this.motionY += -0.01D + rand.nextFloat() * 0.1D;
 
                     double speed = 0.4D;
                     if (getNavigator().getPath() != null) {
@@ -172,7 +172,7 @@ public abstract class EntityTreeFrog extends EntityTropicraftAnimal implements I
             entitypoisonblot.setThrowableHeading(d, d2 + (double)f1, d1, 0.6F, 12F);
             attackTime = 50;
 
-            rotationYaw = (float)((Math.atan2(d1, d) * 180D) / 3.1415927410125732D) - 90F;
+            rotationYaw = (((float)Math.atan2(d1, d) * 180F) / 3.1415927410125732F) - 90F;
             hasAttacked = true;
         }
     }

@@ -48,9 +48,9 @@ public class TCPacketEvents {
 			
 			//Weather.dbg("Weather2 packet command from client: " + packetCommand);
 			
-			if (packetCommand.equals("")) {
+			/*if (packetCommand.equals("")) {
 				
-			}
+			}*/
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();

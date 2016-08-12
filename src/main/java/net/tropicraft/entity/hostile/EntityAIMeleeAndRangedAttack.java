@@ -108,14 +108,14 @@ public class EntityAIMeleeAndRangedAttack extends EntityAIBase
             this.field_75318_f = 0;
         }
 
-        if (d0 <= (double)this.shootCutoffRangeSqr && this.field_75318_f >= 20)
+        /*if (d0 <= (double)this.shootCutoffRangeSqr && this.field_75318_f >= 20)
         {
             //this.entityHost.getNavigator().clearPathEntity();
         }
         else
         {
             //this.entityHost.getNavigator().tryMoveToEntityLiving(this.attackTarget, this.entityMoveSpeed);
-        }
+        }*/
         
         if (this.field_75318_f >= 20) {
         	this.entityHost.getNavigator().tryMoveToEntityLiving(this.attackTarget, this.entityMoveSpeed);

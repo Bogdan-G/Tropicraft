@@ -49,12 +49,12 @@ public class TileEntityFirePit extends TileEntity {
 		int amount = 5 / (Minecraft.getMinecraft().gameSettings.particleSetting+1);
 		
 		//System.out.println(amount);
-		Random rand = new Random();
+		Random rand = new org.bogdang.modifications.random.XSTR();
 		for (int i = 0; i < amount; i++)
         {
         	double speed = 0.15D;
         	
-        	EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, xCoord + rand.nextDouble(), yCoord + 0.2D + rand.nextDouble() * 0.2D, zCoord + rand.nextDouble(), (rand.nextDouble() - rand.nextDouble()) * speed, 0.03D, (rand.nextDouble() - rand.nextDouble()) * speed);
+        	EntityRotFX entityfx = pm.spawnNewParticleIconFX(worldObj, ParticleRegistry.smoke, xCoord + rand.nextFloat(), yCoord + 0.2D + rand.nextFloat() * 0.2D, zCoord + rand.nextFloat(), (rand.nextFloat() - rand.nextFloat()) * speed, 0.03D, (rand.nextFloat() - rand.nextFloat()) * speed);
         	ParticleBehaviors.setParticleRandoms(entityfx, true, true);
         	ParticleBehaviors.setParticleFire(entityfx);
         	entityfx.setMaxAge(100+rand.nextInt(300));

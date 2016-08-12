@@ -132,9 +132,7 @@ public class TileEntityBambooChest extends TileEntityChest {
     private boolean func_94044_a(int x, int y, int z)
     {
         Block block = worldObj.getBlock(x, y, z);
-        return block != null && 
-        		block instanceof BlockBambooChest ? 
-        				((BlockBambooChest)block).field_149956_a == this.func_145980_j() : false;
+        return block instanceof BlockBambooChest && ((BlockBambooChest)block).field_149956_a == this.func_145980_j();
     }
 
     /**

@@ -133,7 +133,7 @@ public class ItemTropicraftOre extends ItemTropicraftMulti {
         unrefinedIcons = new IIcon[2];
         
         for (int i = 0; i < 2; i++) {
-            unrefinedIcons[i] = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_" + names[5] + "" + (i + 1));
+            unrefinedIcons[i] = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_" + names[5]/* + "" */+ (i + 1));
         }
     }
 }

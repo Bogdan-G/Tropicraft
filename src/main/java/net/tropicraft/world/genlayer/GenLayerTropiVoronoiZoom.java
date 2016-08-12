@@ -71,12 +71,12 @@ public class GenLayerTropiVoronoiZoom extends GenLayerTropicraft {
                     	double distanceX;
                     	double distanceXY;
                     	switch(zoomMode) {
-                    		case CARTESIAN:
+                    		/*case CARTESIAN: //FB: DB_DUPLICATE_SWITCH_CLAUSES
                                 baseDistance = ((double)innerX - offsetX) * ((double)innerX - offsetX) + ((double)innerY - offsetY) * ((double)innerY - offsetY);
                                 distanceY = ((double)innerX - offsetXY) * ((double)innerX - offsetXY) + ((double)innerY - offsetYY) * ((double)innerY - offsetYY);
                                 distanceX = ((double)innerX - offsetXX) * ((double)innerX - offsetXX) + ((double)innerY - offsetYX) * ((double)innerY - offsetYX);
                                 distanceXY = ((double)innerX - offsetXXY) * ((double)innerX - offsetXXY) + ((double)innerY - offsetYXY) * ((double)innerY - offsetYXY);
-                                break;
+                                break;*/
                     		case MANHATTAN:
                             	baseDistance = Math.abs(innerX - offsetX) + Math.abs(innerY - offsetY);
                             	distanceY = Math.abs(innerX - offsetXY) + Math.abs(innerY - offsetYY);

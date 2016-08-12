@@ -25,7 +25,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityTropiCreeper extends EntityCoroAI implements IMob {
 
-	public AIAgent agent;
+	public AIAgent agent = null;//FB: UR_UNINIT_READ
 	
 	public EntityTropiCreeper(World par1World) {
 		super(par1World);
@@ -192,7 +192,7 @@ public class EntityTropiCreeper extends EntityCoroAI implements IMob {
 				//this.dropItem(TCItemRegistry.coconutBomb.itemID, rand.nextInt(3) + 1);
 				int y = worldObj.getHeightValue((int)posX, (int)posZ);
 				int xo = rand.nextInt(3) + 4;
-				int zo = xo + rand.nextInt(3) - (new Random()).nextInt(3);
+				int zo = xo + rand.nextInt(3) - (new org.bogdang.modifications.random.XSTR()).nextInt(3);
 				for(int x = (int)posX - xo; x < (int)posX + xo; x++)
 				{
 					for(int z = (int)posZ - zo; z < (int)posZ + zo; z++)

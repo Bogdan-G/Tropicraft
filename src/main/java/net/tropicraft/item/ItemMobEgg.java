@@ -122,16 +122,14 @@ public class ItemMobEgg extends ItemTropicraftMulti {
 			}
 
 			if (s.equals("Koa Man")) {
-				Random rand = new Random();
+				Random rand = new org.bogdang.modifications.random.XSTR();
 				int choice = rand.nextInt(2);
 				s = "KoaHunter";
 				if (choice == 1) s = "KoaFisher";
 			}
 
 			StringBuilder sb = new StringBuilder();
-			sb.append(TCInfo.MODID);
-			sb.append(".");
-			sb.append(s);
+			sb.append(TCInfo.MODID).append('.').append(s);
 			s = sb.toString();
 
 			i += Facing.offsetsXForSide[l];

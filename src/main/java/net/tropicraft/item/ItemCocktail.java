@@ -202,6 +202,7 @@ public class ItemCocktail extends ItemTropicraft {
         Ingredient[] ingredients = new Ingredient[tagList.tagCount()];
         
         for (int i = 0; i < tagList.tagCount(); ++i) {
+            //hmm, need System.arraycopy?
             int id = ((NBTTagCompound)tagList.getCompoundTagAt(i)).getByte("IngredientID");
             ingredients[i] = Ingredient.ingredientsList[id];
         }

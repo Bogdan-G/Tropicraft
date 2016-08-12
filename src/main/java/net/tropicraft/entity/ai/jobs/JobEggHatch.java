@@ -70,14 +70,14 @@ public class JobEggHatch extends JobBase {
 				countdownHatch--;
 				if (countdownHatch == 0) {
 					//hatch
-					Random rand = new Random();
+					Random rand = new org.bogdang.modifications.random.XSTR();
 					int spawnCount = rand.nextInt(3) + 2;
 					for (int i = 0; i < spawnCount; i++) {
 						SpiderChild spider = new SpiderChild(ent.worldObj);
 						spider.setPosition(ent.posX, ent.posY, ent.posZ);
-						spider.motionX = (rand.nextDouble() - rand.nextDouble()) * 0.5;
-						spider.motionY = (rand.nextDouble() - rand.nextDouble()) * 0.5;
-						spider.motionZ = (rand.nextDouble() - rand.nextDouble()) * 0.5;
+						spider.motionX = (rand.nextFloat() - rand.nextFloat()) * 0.5;
+						spider.motionY = (rand.nextFloat() - rand.nextFloat()) * 0.5;
+						spider.motionZ = (rand.nextFloat() - rand.nextFloat()) * 0.5;
 						ent.worldObj.spawnEntityInWorld(spider);
 						ent.setDead();
 					}

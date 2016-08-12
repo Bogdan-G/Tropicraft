@@ -60,6 +60,7 @@ public class Encyclopedia extends TropicalBook {
         addItemToRecipeContents(recipeContents, result);
 
         String recipeString = "";
+        StringBuilder recipeStringSB = new StringBuilder(recipeString);
         int i = 0;
         int width = 0;
         int height = 0;
@@ -71,15 +72,17 @@ public class Encyclopedia extends TropicalBook {
                 String row = cols[j];
                 ++height;
                 width = row.length();
-                recipeString = recipeString + row;
+                recipeStringSB.append(row);
             }
+            recipeString=String.valueOf(recipeStringSB);
         } else {
             while (aobj[i] instanceof String) {
                 String row = (String) aobj[i++];
                 ++height;
                 width = row.length();
-                recipeString = recipeString + row;
+                recipeStringSB.append(row);
             }
+            recipeString=String.valueOf(recipeStringSB);
         }
 
         HashMap<Character, ItemStack> charMap;
@@ -258,7 +261,7 @@ public class Encyclopedia extends TropicalBook {
         return null;
     }
     
-    public class RecipeEntry {
+    public static class RecipeEntry {
         
         public int width;
         public int height;

@@ -51,7 +51,7 @@ public class MapGenTropicsCaves extends MapGenBase {
         double d5 = (double)(chunkZ * 16 + 8);
         float f3 = 0.0F;
         float f4 = 0.0F;
-        Random random = new Random(seed);
+        Random random = new org.bogdang.modifications.random.XSTR(seed);
 
         if (length <= 0)
         {

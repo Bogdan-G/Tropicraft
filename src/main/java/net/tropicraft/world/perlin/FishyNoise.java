@@ -20,7 +20,7 @@ public class FishyNoise {
 
 	public FishyNoise(long seed)
 	{
-		final Random rand = new Random(seed);
+		final Random rand = new org.bogdang.modifications.random.XSTR(seed);
 		for(int i = 0; i < 256; i++)
 		{
 			this.perm[i] = i; //Fill up the random array with numbers 0-256

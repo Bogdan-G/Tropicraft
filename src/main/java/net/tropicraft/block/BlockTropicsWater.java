@@ -25,8 +25,8 @@ public class BlockTropicsWater extends BlockFluidClassic {
 		super(fluid, material);
 		this.lightOpacity = 0;
 		this.setCreativeTab(null);
-		this.displacements.put(TCBlockRegistry.coral, Boolean.valueOf(false));
-		this.displacements.put(TCBlockRegistry.bambooFence, Boolean.valueOf(false));
+		this.displacements.put(TCBlockRegistry.coral, Boolean.FALSE);
+		this.displacements.put(TCBlockRegistry.bambooFence, Boolean.FALSE);
 		setRenderPass(1);
 	}
 
@@ -50,7 +50,7 @@ public class BlockTropicsWater extends BlockFluidClassic {
     public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side)
     {
         Material material = world.getBlock(x, y, z).getMaterial();
-        return material == this.blockMaterial ? false : (side == 1 ? true : super.shouldSideBeRendered(world, x, y, z, side));
+        return material != this.blockMaterial && (side == 1 || super.shouldSideBeRendered(world, x, y, z, side));
     }
     
     @Override

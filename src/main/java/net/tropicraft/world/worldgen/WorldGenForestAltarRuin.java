@@ -86,7 +86,7 @@ public class WorldGenForestAltarRuin extends TCDirectionalGen {
 					} else {
 						this.placeBlockWithDir(x, y + 1, z, TCBlockRegistry.singleSlabs, 2);
 					}
-				} else if(z % 2 == 1) {
+				} else if((z & 1) == 1) {
 					if(x == 0 || x == width - 1) {
 						this.placeBlockWithDir(x, y + 1, z, TCBlockRegistry.palmFence, 0);
 					}

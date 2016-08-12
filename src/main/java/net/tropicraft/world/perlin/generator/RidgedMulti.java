@@ -17,10 +17,10 @@ public class RidgedMulti extends NoiseModule {
 	public RidgedMulti(long seed, int nOctaves)
 	{
 		this.numOctaves = nOctaves;
-		final Random rand = new Random(seed);
-		this.offsetX = rand.nextDouble() / 2 + 0.01D;
-		this.offsetY = rand.nextDouble() / 2 + 0.01D;
-		this.offsetZ = rand.nextDouble() / 2 + 0.01D;
+		final Random rand = new org.bogdang.modifications.random.XSTR(seed);
+		this.offsetX = rand.nextFloat() / 2 + 0.01D;
+		this.offsetY = rand.nextFloat() / 2 + 0.01D;
+		this.offsetZ = rand.nextFloat() / 2 + 0.01D;
 		this.noiseGen = new FishyNoise(seed);
 		final double h = 1.0;
 		for (int i = 0; i < 32; i++)

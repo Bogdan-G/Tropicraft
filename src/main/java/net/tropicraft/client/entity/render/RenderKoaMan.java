@@ -173,11 +173,11 @@ public class RenderKoaMan extends RenderLiving
 
 	protected void passSpecialRender(EntityLiving entityliving, double d, double d1, double d2)
 	{
-		if (entityliving instanceof EntityLiving) {
+		//if (entityliving instanceof EntityLiving) { //LOOOL
 			if (renderManager.livingPlayer.getDistanceToEntity(entityliving) < 12) {
-				renderName((EntityLiving)entityliving, d, d1, d2);
+				renderName(/*(EntityLiving)*/entityliving, d, d1, d2);//???
 			}
-		}
+		//}
 		//c_CoroAIUtil.renderJobs((c_EnhAI)entityliving);
 	}
 

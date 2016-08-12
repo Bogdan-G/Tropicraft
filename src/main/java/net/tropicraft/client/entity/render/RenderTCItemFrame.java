@@ -189,8 +189,8 @@ public class RenderTCItemFrame extends Render
             }
 
             //net.minecraftforge.client.event.RenderItemInFrameEvent event = new net.minecraftforge.client.event.RenderItemInFrameEvent(p_82402_1_, this);
-            if (true)
-            {
+            //if (true)
+            //{
             if (item == Items.filled_map)
             {
                 this.renderManager.renderEngine.bindTexture(mapBackgroundTextures);
@@ -259,7 +259,7 @@ public class RenderTCItemFrame extends Render
                     }
                 }
             }
-            }
+            //}
 
             GL11.glPopMatrix();
         }

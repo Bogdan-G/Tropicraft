@@ -70,14 +70,14 @@ public class JobEggManage extends JobBase {
 			if (eggSpawnCountdown == 0) {
 				eggSpawnCountdown = eggSpawnCountdownMax;
 				
-				Random rand = new Random();
+				Random rand = new org.bogdang.modifications.random.XSTR();
 				Vec3 spawnCoords = null;
 				if (eggs.size() == 0) {
 					spawnCoords = Vec3.createVectorHelper(ent.posX, ent.posY, ent.posZ);
 				} else {
 					SpiderEgg spawnBesideEgg = eggs.get(rand.nextInt(eggs.size()));
 					double range = 1D;
-					spawnCoords = Vec3.createVectorHelper(spawnBesideEgg.posX/* + rand.nextDouble() * range - range/2*/, spawnBesideEgg.posY, spawnBesideEgg.posZ/* + rand.nextDouble() * range - range/2*/);
+					spawnCoords = Vec3.createVectorHelper(spawnBesideEgg.posX/* + rand.nextFloat() * range - range/2*/, spawnBesideEgg.posY, spawnBesideEgg.posZ/* + rand.nextFloat() * range - range/2*/);
 					
 				}
 				

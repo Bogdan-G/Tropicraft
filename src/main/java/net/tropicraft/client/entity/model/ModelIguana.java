@@ -24,6 +24,7 @@ public class ModelIguana extends ModelBase {
     public ModelRenderer tailBase;
     public ModelRenderer tailMid;
     public ModelRenderer miscPart;
+    private float math_pi = 3.141593F;
 
     public ModelIguana() {
         head = new ModelRenderer(this, 36, 23);
@@ -154,15 +155,18 @@ public class ModelIguana extends ModelBase {
 
     @Override
     public void setLivingAnimations(EntityLivingBase entityliving, float f, float f1, float f2) {
-        fRleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.75F * f1;
-        fLleg.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.75F * f1;
-        rRlet.rotateAngleX = MathHelper.cos(f * 0.6662F + 3.141593F) * 1.75F * f1;
-        rLleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.75F * f1;
-        tailBase.rotateAngleY = MathHelper.cos(f * 0.6662F) * .25F * f1;
-        tailMid.setRotationPoint(0F - (MathHelper.cos(tailBase.rotateAngleY + 1.570796F) * 6), 21.5F, 12F + MathHelper.sin(tailBase.rotateAngleX + 3.14159F) * 6);
-        tailMid.rotateAngleY = tailBase.rotateAngleY + MathHelper.cos(f * 0.6662F) * .50F * f1;
-        miscPart.setRotationPoint(0F - (MathHelper.cos(tailMid.rotateAngleY + 1.570796F) * 6), 21.5F, 18F + MathHelper.sin(tailMid.rotateAngleX + 3.14159F) * 6);
-        miscPart.rotateAngleY = tailMid.rotateAngleY + MathHelper.cos(f * 0.6662F) * .75F * f1;;
+        float temp1 = f * 0.6662F;
+        float temp2 = temp1 + math_pi;
+        float temp3 = 1.75F * f1;
+        fRleg.rotateAngleX = MathHelper.cos(temp1) * temp3;
+        fLleg.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        rRlet.rotateAngleX = MathHelper.cos(temp2) * temp3;
+        rLleg.rotateAngleX = MathHelper.cos(temp1) * temp3;
+        tailBase.rotateAngleY = MathHelper.cos(temp1) * .25F * f1;
+        tailMid.setRotationPoint(0F - (MathHelper.cos(tailBase.rotateAngleY + math_pi/2/*1.570796F*/) * 6), 21.5F, 12F + MathHelper.sin(tailBase.rotateAngleX + 3.14159F) * 6);
+        tailMid.rotateAngleY = tailBase.rotateAngleY + MathHelper.cos(temp1) * .50F * f1;
+        miscPart.setRotationPoint(0F - (MathHelper.cos(tailMid.rotateAngleY + math_pi/2/*1.570796F*/) * 6), 21.5F, 18F + MathHelper.sin(tailMid.rotateAngleX + 3.14159F) * 6);
+        miscPart.rotateAngleY = tailMid.rotateAngleY + MathHelper.cos(temp1) * .75F * f1;;
     }
 
     @Override

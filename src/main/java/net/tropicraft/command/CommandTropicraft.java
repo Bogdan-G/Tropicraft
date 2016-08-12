@@ -78,9 +78,9 @@ public class CommandTropicraft extends CommandBase {
 				while (it.hasNext()) {
 					
 					ManagedLocation ml = (ManagedLocation) it.next();
-					if (ml instanceof TownKoaVillage) {
+					//if (ml instanceof TownKoaVillage) {
 						//((TownKoaVillage) ml).spawnEntities();
-					}
+					//}
 				}
 			}
 		}
