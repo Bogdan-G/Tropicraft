@@ -14,7 +14,6 @@ public class ModelSpiderEgg extends ModelBase {
     public ModelRenderer body2;
     public ModelRenderer body3;
     public ModelRenderer body4;
-    private float math_pi = 3.141593F;
     
 
     public ModelSpiderEgg() {
@@ -23,7 +22,7 @@ public class ModelSpiderEgg extends ModelBase {
         body.addBox(-1F, -2F, -4F, 2, 4, 9, 0F);
         body.setRotationPoint(0F, 16F, 0F);
         body.rotateAngleX = 0F;
-        body.rotateAngleY = math_pi;
+        body.rotateAngleY = (float)Math.PI;
         body.rotateAngleZ = 0F;
         body.mirror = false;
         
@@ -97,7 +96,7 @@ public class ModelSpiderEgg extends ModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, ent);
         /*Face.rotateAngleX = f4 / 57.29578F + herps;
-        Face.rotateAngleY = f3 / 57.29578F + math_pi;
+        Face.rotateAngleY = f3 / 57.29578F + (float)Math.PI;
         Head.rotateAngleX = Face.rotateAngleX;
         Head.rotateAngleY = Face.rotateAngleY;*/
     }
@@ -112,17 +111,17 @@ public class ModelSpiderEgg extends ModelBase {
     public void setLivingAnimationSit(EntityLivingBase entityliving, float f, float f1, float f2) {
     	body.setRotationPoint(0F, 20F, 0F);
         body.rotateAngleX = 0.9320058F;
-        body.rotateAngleY = math_pi;
+        body.rotateAngleY = (float)Math.PI;
     }
     
     public void setLivingAnimationClimb(EntityLivingBase entityliving, float f, float f1, float f2) {
-    	body.rotateAngleX = math_pi/2/*1.570796F*/;
+    	body.rotateAngleX = (float)Math.PI/2/*1.570796F*/;
         body.setRotationPoint(0F, 16F, 0F);
     }
     
     public void setLivingAnimationStand(EntityLivingBase entityliving, float f, float f1, float f2) {
     	body.setRotationPoint(0F, 16F, 0F);
-        body.rotateAngleY = math_pi;
+        body.rotateAngleY = (float)Math.PI;
         body.rotateAngleX = 0F;
     }
     

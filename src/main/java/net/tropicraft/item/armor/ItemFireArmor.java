@@ -23,7 +23,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemFireArmor extends ItemTropicraftArmor {
 
-	private float math_pi180 = 180.0F * 3.1415927F;
 	public ItemFireArmor(ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
 		
@@ -191,8 +190,8 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             for (int i = 0; i < 1 + (onLava ? 5 : 0); i++) {
 
-                motionX = ((double)(-Math.sin((look) / math_pi180) * Math.cos(0 / math_pi180)) * (speed + (0.1 * rand.nextFloat())));
-                motionZ = ((double)(Math.cos((look) / math_pi180) * Math.cos(0 / math_pi180)) * (speed + (0.1 * rand.nextFloat())));
+                motionX = ((double)(-Math.sin((look) / (float)Math.PI*180.0F) * Math.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                motionZ = ((double)(Math.cos((look) / (float)Math.PI*180.0F) * Math.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
 
                 String particle = "flame";
                 if (rand.nextInt(2) == 0) particle = "smoke";
@@ -237,9 +236,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             float look = -180F;
             double dist = 0.5F;
 
-            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
-            //double gatherY = player.posY-0.5 + (double)(-MathHelper.sin(player.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
-            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
+            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            //double gatherY = player.posY-0.5 + (double)(-MathHelper.sin(player.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
+            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
 
             String particle = "flame";
             if (rand.nextInt(2) == 0) particle = "smoke";
@@ -261,9 +260,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             range = 2F;
 
-            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
-            //double gatherY = player.posY + 0.5 + (double)(-MathHelper.sin(player.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
-            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / math_pi180) * Math.cos(player.rotationPitch / math_pi180)) * dist);
+            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            //double gatherY = player.posY + 0.5 + (double)(-MathHelper.sin(player.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
+            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
 
             String particle = "flame";
             if (rand.nextInt(2) == 0) particle = "smoke";
@@ -310,9 +309,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
         float look = 0F;
         //int height = 10;
         double dist = 0.1F;
-        double gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
-        double gatherY = center.posY+0.8 + (double)(-MathHelper.sin(center.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
-        double gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
+        double gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
+        double gatherY = center.posY+0.8 + (double)(-MathHelper.sin(center.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
+        double gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
         double entDist = ent.getDistance(gatherX, gatherY, gatherZ);
 
         if (entDist > -1) {
@@ -437,9 +436,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             /*look = 40F;
             //int height = 10;
             dist = 1F;
-            gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
-            gatherY = center.posY-0.5 + (double)(-MathHelper.sin(center.rotationPitch / math_pi180) * dist) - 0D; //center.posY - 0D;
-            gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / math_pi180) * Math.cos(center.rotationPitch / math_pi180)) * dist);
+            gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            gatherY = center.posY-0.5 + (double)(-MathHelper.sin(center.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
+            gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
             double vecX = ent.posX - gatherX;
             double vecY = ent.posY - gatherY;// + (double)(tNode.nextNode.bodyPiece.height / 2.0F) - (tNode.bodyPiece.posY + (double)(tNode.bodyPiece.height / 2.0F));
             double vecZ = ent.posZ - gatherZ;

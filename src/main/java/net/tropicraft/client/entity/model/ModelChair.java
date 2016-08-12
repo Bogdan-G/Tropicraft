@@ -14,7 +14,7 @@ public class ModelChair extends ModelBase {
     public ModelRenderer frontRightLeg;
     public ModelRenderer rightArm;
     public ModelRenderer leftArm;
-    private float math_pi_0_5 = 1.570796F;
+    private float math_pi_0_5 = (float)Math.PI/2;
 
     public ModelChair() {
         seat = new ModelRenderer(this, 0, 0);

@@ -13,8 +13,6 @@ import CoroUtil.entity.EntityTropicalFishHook;
 
 public class RenderFishHook extends Render {
 
-    private float math_pi = 3.141593F;
-    
     public RenderFishHook() {
     }
     
@@ -57,26 +55,26 @@ public class RenderFishHook extends Render {
         GL11.glDisable(32826 /*GL_RESCALE_NORMAL_EXT*/);
         GL11.glPopMatrix();
         if (entityfish.angler != null) {
-            float f9 = ((entityfish.angler.prevRotationYaw + (entityfish.angler.rotationYaw - entityfish.angler.prevRotationYaw) * f1) * math_pi) / 180F;
+            float f9 = ((entityfish.angler.prevRotationYaw + (entityfish.angler.rotationYaw - entityfish.angler.prevRotationYaw) * f1) * (float)Math.PI) / 180F;
             double d3 = MathHelper.sin(f9);
             double d5 = MathHelper.cos(f9);
             float f11 = entityfish.angler.getSwingProgress(f1);
-            float f12 = MathHelper.sin(MathHelper.sqrt_float(f11) * math_pi);
+            float f12 = MathHelper.sin(MathHelper.sqrt_float(f11) * (float)Math.PI);
             Vec3 vec3d = Vec3.createVectorHelper(-0.5D, 0.029999999999999999D, 0.80000000000000004D);
             /*
              * vec3d.rotateAroundX((-(entityfish.angler.prevRotationPitch +
              * (entityfish.angler.rotationPitch -
-             * entityfish.angler.prevRotationPitch) * f1) * math_pi) / 180F);
+             * entityfish.angler.prevRotationPitch) * f1) * (float)Math.PI) / 180F);
              * vec3d.rotateAroundY((-(entityfish.angler.prevRotationYaw +
              * (entityfish.angler.rotationYaw -
-             * entityfish.angler.prevRotationYaw) * f1) * math_pi) / 180F);
+             * entityfish.angler.prevRotationYaw) * f1) * (float)Math.PI) / 180F);
              * vec3d.rotateAroundY(f12 * 0.5F); vec3d.rotateAroundX(-f12 * 0.7F);
              */
             double d7 = entityfish.angler.prevPosX + (entityfish.angler.posX - entityfish.angler.prevPosX) * (double) f1 + vec3d.xCoord;
             double d8 = entityfish.angler.prevPosY + (entityfish.angler.posY - entityfish.angler.prevPosY) * (double) f1 + vec3d.yCoord;
             double d9 = entityfish.angler.prevPosZ + (entityfish.angler.posZ - entityfish.angler.prevPosZ) * (double) f1 + vec3d.zCoord;
             if (renderManager.options.thirdPersonView > 0 || true) {
-                float f10 = ((entityfish.angler.prevRenderYawOffset + (entityfish.angler.renderYawOffset - entityfish.angler.prevRenderYawOffset) * f1) * math_pi) / 180F;
+                float f10 = ((entityfish.angler.prevRenderYawOffset + (entityfish.angler.renderYawOffset - entityfish.angler.prevRenderYawOffset) * f1) * (float)Math.PI) / 180F;
                 double d4 = MathHelper.sin(f10);
                 double d6 = MathHelper.cos(f10);
                 d7 = (entityfish.angler.prevPosX + (entityfish.angler.posX - entityfish.angler.prevPosX) * (double) f1) - d6 * 0.34999999999999998D - d4 * 0.84999999999999998D;

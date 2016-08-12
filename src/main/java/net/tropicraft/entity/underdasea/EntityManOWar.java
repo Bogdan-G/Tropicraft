@@ -21,7 +21,6 @@ public class EntityManOWar extends EntityWaterMob {
 	protected float randomMotionVecX;
 	protected float randomMotionVecY;
 	protected float randomMotionVecZ;
-	private float math_pi = 3.141593F;
 
 	public EntityManOWar(World world){
 		super(world);
@@ -83,17 +82,17 @@ public class EntityManOWar extends EntityWaterMob {
 				}
 			}
 			important1 += important2;        
-			if(important1 > 2*math_pi/*6.283185F*/)
+			if(important1 > 2*(float)Math.PI/*6.283185F*/)
 			{
-				important1 -= 2*math_pi;
+				important1 -= 2*(float)Math.PI;
 				if(rand.nextInt(10) == 0)
 				{
 					important2 = (1.0F / (rand.nextFloat() + 1.0F)) * 0.2F;
 				}
 			}
-			if(important1 < math_pi)
+			if(important1 < (float)Math.PI)
 			{
-				float f = important1 / math_pi;
+				float f = important1 / (float)Math.PI;
 				if((double)f > 0.75D)
 				{
 					randomMotionSpeed = 1.0F;
@@ -109,7 +108,7 @@ public class EntityManOWar extends EntityWaterMob {
 				motionZ = randomMotionVecZ * randomMotionSpeed;
 			}
 			float f1 = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
-			renderYawOffset += ((-(float)Math.atan2(motionX, motionZ) * 180F) / math_pi - renderYawOffset) * 0.1F;
+			renderYawOffset += ((-(float)Math.atan2(motionX, motionZ) * 180F) / (float)Math.PI - renderYawOffset) * 0.1F;
 			rotationYaw = renderYawOffset;            
 		}
 		else
@@ -144,7 +143,7 @@ public class EntityManOWar extends EntityWaterMob {
 	{
 		if(rand.nextInt(150) == 0 || !inWater || randomMotionVecX == 0.0F && randomMotionVecY == 0.0F && randomMotionVecZ == 0.0F)
 		{
-			float f = rand.nextFloat() * math_pi * 2.0F;
+			float f = rand.nextFloat() * (float)Math.PI * 2.0F;
 			randomMotionVecX = MathHelper.cos(f) * 0.025F;            
 			randomMotionVecZ = MathHelper.sin(f) * 0.025F;
 		}

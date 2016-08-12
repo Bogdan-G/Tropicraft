@@ -31,8 +31,6 @@ public class EntityAmphibian extends EntityCreature {
     protected int fickleness;
     protected float landSpeed;
     public float moveSpeed;
-    private float math_pi = 3.141593F;
-    private float math_pi_long = 3.1415927410125732F;
 
     public static AttributeModifier speedBoostReturnToLand = (new AttributeModifier(UUID.randomUUID(), "Speed boost return to land", 0.25D, 0)).setSaved(false);
 
@@ -102,24 +100,24 @@ public class EntityAmphibian extends EntityCreature {
                     important1 += important2;
                     if(prevRotationPitch == 0.0F && prevRotationYaw == 0.0F) {
                         float f = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
-                        prevRenderYawOffset = renderYawOffset = (((float)Math.atan2(motionX, motionZ) * 180F) / math_pi_long);
-                        prevRotationPitch = rotationPitch = (((float)Math.atan2(motionY, f) * 180F) / math_pi_long);
+                        prevRenderYawOffset = renderYawOffset = (((float)Math.atan2(motionX, motionZ) * 180F) / (float)Math.PI);
+                        prevRotationPitch = rotationPitch = (((float)Math.atan2(motionY, f) * 180F) / (float)Math.PI);
                     }
 
                     float f3 = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
-                    for(rotationPitch = (((float)Math.atan2(motionY, f3) * 180F) / math_pi_long); rotationPitch - prevRotationPitch < -180F; prevRotationPitch -= 360F) { }
+                    for(rotationPitch = (((float)Math.atan2(motionY, f3) * 180F) / (float)Math.PI); rotationPitch - prevRotationPitch < -180F; prevRotationPitch -= 360F) { }
                     for(; rotationPitch - prevRotationPitch >= 180F; prevRotationPitch += 360F) { }
                     rotationPitch = prevRotationPitch + (rotationPitch - prevRotationPitch) * 0.2F;
 
-                    if(important1 > 2*math_pi/*6.283185F*/) {
-                        important1 -= 2*math_pi;
+                    if(important1 > 2*(float)Math.PI/*6.283185F*/) {
+                        important1 -= 2*(float)Math.PI;
                         if(rand.nextInt(10) == 0) {
                             important2 = (1.0F / (rand.nextFloat() + 1.0F)) * 0.2F;
                         }
                     }
 
-                    if(important1 < math_pi) {
-                        float f = important1 / math_pi;
+                    if(important1 < (float)Math.PI) {
+                        float f = important1 / (float)Math.PI;
                         if((double)f > 0.75D) {
                             randomMotionSpeed = 1.0F;
                         } 
@@ -134,7 +132,7 @@ public class EntityAmphibian extends EntityCreature {
                     }
 
                     float f1 = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
-                    renderYawOffset += ((-(float)Math.atan2(motionX, motionZ) * 180F) / math_pi - renderYawOffset) * 0.1F;
+                    renderYawOffset += ((-(float)Math.atan2(motionX, motionZ) * 180F) / (float)Math.PI - renderYawOffset) * 0.1F;
                     rotationYaw = renderYawOffset;            
                 }      
     }
@@ -164,7 +162,7 @@ public class EntityAmphibian extends EntityCreature {
         
         if(!returnToLand) {
             if(rand.nextInt(70) == 0 || !inWater || randomMotionVecX == 0.0F && randomMotionVecY == 0.0F && randomMotionVecZ == 0.0F) {
-                float f = rand.nextFloat() * math_pi * 2.0F;
+                float f = rand.nextFloat() * (float)Math.PI * 2.0F;
                 randomMotionVecX = MathHelper.cos(f) * 0.15F;
                 randomMotionVecZ = MathHelper.sin(f) * 0.15F;
             }

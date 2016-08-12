@@ -27,7 +27,6 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
     public boolean hasBeenPlaced;
     public static final String[] names = {"Clownfish", "Queen Angelfish", "Yellow Tang", "Butterflyfish", "Geophagus Surinamensis", "Betta Fish"
         , "Regal Tang", "Royal Gamma"};
-    private float math_pi = 3.141593F;
 
     /**
      * Constant used in the datawatcher so this fish knows whether it should spawn a school or not
@@ -86,14 +85,14 @@ public class EntityTropicalFish extends EntityTropicraftWaterMob {
         setColor(i);
         setSize(.4F, .85F);         
         setLocationAndAngles(entityliving.posX, entityliving.posY + (double)entityliving.getEyeHeight(), entityliving.posZ, entityliving.rotationYaw, entityliving.rotationPitch);
-        posX -= MathHelper.cos((rotationYaw / 180F) * math_pi) * 0.16F;
+        posX -= MathHelper.cos((rotationYaw / 180F) * (float)Math.PI) * 0.16F;
         posY -= 0.10000000149011612D;
-        posZ -= MathHelper.sin((rotationYaw / 180F) * math_pi) * 0.16F;
+        posZ -= MathHelper.sin((rotationYaw / 180F) * (float)Math.PI) * 0.16F;
         setPosition(posX, posY, posZ);
         yOffset = 0.0F;
-        motionX = -MathHelper.sin((rotationYaw / 180F) * math_pi) * MathHelper.cos((rotationPitch / 180F) * math_pi);
-        motionZ = MathHelper.cos((rotationYaw / 180F) * math_pi) * MathHelper.cos((rotationPitch / 180F) * math_pi);
-        motionY = -MathHelper.sin((rotationPitch / 180F) * math_pi);
+        motionX = -MathHelper.sin((rotationYaw / 180F) * (float)Math.PI) * MathHelper.cos((rotationPitch / 180F) * (float)Math.PI);
+        motionZ = MathHelper.cos((rotationYaw / 180F) * (float)Math.PI) * MathHelper.cos((rotationPitch / 180F) * (float)Math.PI);
+        motionY = -MathHelper.sin((rotationPitch / 180F) * (float)Math.PI);
 
     }
 

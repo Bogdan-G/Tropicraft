@@ -48,7 +48,7 @@ public class TileEntityPurchasePlate extends TileEntity
     public TileEntityPurchasePlate()
     {
     	Random rand = new org.bogdang.modifications.random.XSTR();
-    	startOffset = (float)(Math.random() * Math.PI * 2.0D);
+    	startOffset = ((new org.bogdang.modifications.random.XSTR()).nextFloat() * (float)Math.PI * 2.0F);
     	angle = rand.nextInt(360);
     	//cycleIndex = rand.nextInt(Buyables.count());
     	
