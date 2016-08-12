@@ -39,7 +39,7 @@ public class ModelMarlin extends ModelBase {
         Body.setRotationPoint(0F, 19F, 0F);
         Body.setTextureSize(64, 32);
         Body.mirror = true;
-        setRotation(Body, 0F, -1.570796F, 0F);
+        setRotation(Body, 0F, -(float)Math.PI/2, 0F);
         DorsalFin1 = new ModelRenderer(this, 24, 20);
         DorsalFin1.addBox(-0.5F, -0.5F, -0.5F, 1, 2, 10);
         DorsalFin1.setRotationPoint(0F, 15.5F, -5F);
@@ -74,7 +74,7 @@ public class ModelMarlin extends ModelBase {
         head.addBox("DorsalFin2", -0.5F, -6F, -2.5F, 1, 3, 2);
         sword = new ModelRenderer(this, "sword");
         sword.setRotationPoint(0F, 0F, 0F);
-        setRotation(sword, 0F, 1.5707F, 0F);
+        setRotation(sword, 0F, (float)Math.PI/2, 0F);
         sword.mirror = true;
         sword.addBox("Nose1", 4F, -1.5F, -0.5F, 10, 1, 1);
         head.addChild(sword);
@@ -131,7 +131,7 @@ public class ModelMarlin extends ModelBase {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
         
-        float angle = f2 * 3.14159F / 180F;
+        float angle = f2 * (float)Math.PI / 180F;
         //System.out.println(angle);
         super.setRotationAngles(f, f1, f2, f3, f4, f5, ent);
         //System.out.println("f = " + f);

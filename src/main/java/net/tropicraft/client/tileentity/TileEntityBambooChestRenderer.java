@@ -112,7 +112,7 @@ public class TileEntityBambooChestRenderer extends TileEntitySpecialRenderer
         }
         f1 = 1.0F - f1;
         f1 = 1.0F - f1 * f1 * f1;
-        modelchest.chestLid.rotateAngleX = -((f1 * 3.141593F) / 2.0F);
+        modelchest.chestLid.rotateAngleX = -((f1 * (float)Math.PI) / 2.0F);
         modelchest.renderAll();
         GL11.glDisable(32826 /*GL_RESCALE_NORMAL_EXT*/);
         GL11.glPopMatrix();

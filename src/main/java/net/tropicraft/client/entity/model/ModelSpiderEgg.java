@@ -115,7 +115,7 @@ public class ModelSpiderEgg extends ModelBase {
     }
     
     public void setLivingAnimationClimb(EntityLivingBase entityliving, float f, float f1, float f2) {
-    	body.rotateAngleX = (float)Math.PI/2/*1.570796F*/;
+    	body.rotateAngleX = (float)Math.PI/2/*(float)Math.PI/2*/;
         body.setRotationPoint(0F, 16F, 0F);
     }
     

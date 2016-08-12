@@ -33,7 +33,7 @@ public class ModelTreeFrog extends ModelBase {
         body = new ModelRenderer(this, 28, 8);
         body.addBox(-2F, -5F, -2F, 4, 9, 4, 0.0F);
         body.setRotationPoint(0.0F, 21F, 1.0F);
-        body.rotateAngleX = 1.570796F;
+        body.rotateAngleX = (float)Math.PI/2;
         body.rotateAngleY = 0.0F;
         body.rotateAngleZ = 0.0F;
         body.mirror = false;
@@ -82,7 +82,7 @@ public class ModelTreeFrog extends ModelBase {
 
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
-        float temp1 = f * 0.6662F;float temp2 = temp1 + 3.141593F;float temp3 = 1.4F * f1;
+        float temp1 = f * 0.6662F;float temp2 = temp1 + (float)Math.PI;float temp3 = 1.4F * f1;
         frontleft_leg.rotateAngleX = MathHelper.cos(temp1) * temp3;
         rear_left_leg.rotateAngleX = MathHelper.cos(temp2) * temp3;
         rear_right_leg.rotateAngleX = MathHelper.cos(temp2) * temp3;

@@ -190,8 +190,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             for (int i = 0; i < 1 + (onLava ? 5 : 0); i++) {
 
-                motionX = ((double)(-Math.sin((look) / (float)Math.PI*180.0F) * Math.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
-                motionZ = ((double)(Math.cos((look) / (float)Math.PI*180.0F) * Math.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                //motionX = (double)((-Math.sin((look) / (float)Math.PI*180.0F) * Math.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                motionX = (double)(-Math.sin((look) / ((float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                motionZ = (double)(Math.cos((look) / ((float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
 
                 String particle = "flame";
                 if (rand.nextInt(2) == 0) particle = "smoke";

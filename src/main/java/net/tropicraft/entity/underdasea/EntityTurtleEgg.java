@@ -31,7 +31,7 @@ public class EntityTurtleEgg extends EntityLiving {
         // But if we are starting the process of hatching (not at the end yet), spin and decrement counter
         if (hatchingTime != 0) {
             // Do crazy spinny stuff
-            rotationRand += 1.5707F * worldObj.rand.nextFloat();
+            rotationRand += (float)Math.PI/2 * worldObj.rand.nextFloat();
             hatchingTime--;
             
             // Hatch time!

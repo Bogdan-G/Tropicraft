@@ -49,20 +49,20 @@ public class ModelAshen extends ModelBase {
         body.setRotationPoint(0F, 13F, 2F);
         body.setTextureSize(64, 32);
         body.mirror = true;
-        setRotation(body, 0F, 3.141593F, 0F);
+        setRotation(body, 0F, (float)Math.PI, 0F);
         head = new ModelRenderer(this, 24, 18);
         head.addBox(-2F, -3F, -1F, 4, 3, 4);
         head.setRotationPoint(0F, 10F, 1F);
         head.setTextureSize(64, 32);
         head.mirror = true;
-        setRotation(head, 0F, 3.141593F, 0F);
+        setRotation(head, 0F, (float)Math.PI, 0F);
         
         //mask = new ModelRenderer(this, 0, 0);
         //mask.addBox(-5.5F, -10F, 3F, 11, 22, 1);
         //mask.setRotationPoint(0F, 10F, 1F);
         //mask.setTextureSize(64, 32);
         //mask.mirror = true;
-        //setRotation(mask, 0F, 3.141593F, 0F);
+        //setRotation(mask, 0F, (float)Math.PI, 0F);
 
         leftArm = new ModelRenderer(this, "leftArm");
         leftArm.setRotationPoint(-2F, 10.5F, 0.5F);
@@ -116,7 +116,7 @@ public class ModelAshen extends ModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity ent) {
 
         head.rotateAngleX = f4 / 125F + headAngle;
-        head.rotateAngleY = f3 / 125F + (float)Math.PI/*3.14159F*/;
+        head.rotateAngleY = f3 / 125F + (float)Math.PI/*(float)Math.PI*/;
 
         float ArmRotater = 1.247196F;
         float subStraight = (float)Math.PI/2/*1.570795F*/;

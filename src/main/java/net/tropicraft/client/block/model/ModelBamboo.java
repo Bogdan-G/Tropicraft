@@ -144,7 +144,7 @@ public class ModelBamboo extends ModelBase
         leaves1.renderWithRotation(par7);
 
         leaves4.rotateAngleX = 0F;
-        leaves4.rotateAngleY = -1.570796F;
+        leaves4.rotateAngleY = -(float)Math.PI/2;
         leaves4.rotateAngleZ = 0F;
         leaves4.renderWithRotation(par7);
 
@@ -154,7 +154,7 @@ public class ModelBamboo extends ModelBase
         leaves2.renderWithRotation(par7);
 
         leaves3.rotateAngleX = 0F;
-        leaves3.rotateAngleY = -1.570796F;
+        leaves3.rotateAngleY = -(float)Math.PI/2;
         leaves3.rotateAngleZ = 0F;
         leaves3.renderWithRotation(par7);
 
@@ -164,7 +164,7 @@ public class ModelBamboo extends ModelBase
         leaves5.renderWithRotation(par7);
 
         leaves6.rotateAngleX = 0F;
-        leaves6.rotateAngleY = -1.570796F;
+        leaves6.rotateAngleY = -(float)Math.PI/2;
         leaves6.rotateAngleZ = 0F;
         leaves6.renderWithRotation(par7);
 
@@ -174,7 +174,7 @@ public class ModelBamboo extends ModelBase
         leaves7.renderWithRotation(par7);
 
         leaves8.rotateAngleX = 0F;
-        leaves8.rotateAngleY = -1.570796F;
+        leaves8.rotateAngleY = -(float)Math.PI/2;
         leaves8.rotateAngleZ = 0F;
         leaves8.renderWithRotation(par7);
 

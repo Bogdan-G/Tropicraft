@@ -162,9 +162,9 @@ public class ModelIguana extends ModelBase {
         rRlet.rotateAngleX = MathHelper.cos(temp2) * temp3;
         rLleg.rotateAngleX = MathHelper.cos(temp1) * temp3;
         tailBase.rotateAngleY = MathHelper.cos(temp1) * .25F * f1;
-        tailMid.setRotationPoint(0F - (MathHelper.cos(tailBase.rotateAngleY + (float)Math.PI/2/*1.570796F*/) * 6), 21.5F, 12F + MathHelper.sin(tailBase.rotateAngleX + 3.14159F) * 6);
+        tailMid.setRotationPoint(0F - (MathHelper.cos(tailBase.rotateAngleY + (float)Math.PI/2/*(float)Math.PI/2*/) * 6), 21.5F, 12F + MathHelper.sin(tailBase.rotateAngleX + (float)Math.PI) * 6);
         tailMid.rotateAngleY = tailBase.rotateAngleY + MathHelper.cos(temp1) * .50F * f1;
-        miscPart.setRotationPoint(0F - (MathHelper.cos(tailMid.rotateAngleY + (float)Math.PI/2/*1.570796F*/) * 6), 21.5F, 18F + MathHelper.sin(tailMid.rotateAngleX + 3.14159F) * 6);
+        miscPart.setRotationPoint(0F - (MathHelper.cos(tailMid.rotateAngleY + (float)Math.PI/2/*(float)Math.PI/2*/) * 6), 21.5F, 18F + MathHelper.sin(tailMid.rotateAngleX + (float)Math.PI) * 6);
         miscPart.rotateAngleY = tailMid.rotateAngleY + MathHelper.cos(temp1) * .75F * f1;;
     }
 

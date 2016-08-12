@@ -37,8 +37,8 @@ public class ItemUmbrella extends ItemTropicraftColored {
 		double d1 = (entityplayer.prevPosY + (entityplayer.posY - entityplayer.prevPosY) * (double) f + 1.6200000000000001D) - (double) entityplayer.yOffset;
 		double d2 = entityplayer.prevPosZ + (entityplayer.posZ - entityplayer.prevPosZ) * (double) f;
 		Vec3 vec3d = Vec3.createVectorHelper(d, d1, d2);
-		float f3 = MathHelper.cos(-f2 * 0.01745329F - 3.141593F);
-		float f4 = MathHelper.sin(-f2 * 0.01745329F - 3.141593F);
+		float f3 = MathHelper.cos(-f2 * 0.01745329F - (float)Math.PI);
+		float f4 = MathHelper.sin(-f2 * 0.01745329F - (float)Math.PI);
 		float f5 = -MathHelper.cos(-f1 * 0.01745329F);
 		float f6 = MathHelper.sin(-f1 * 0.01745329F);
 		float f7 = f4 * f5;

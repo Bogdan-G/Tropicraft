@@ -34,7 +34,7 @@ public class ModelEIH extends ModelBase {
         nose.setRotationPoint(0.0F, -14.8F, -1F);
         nose.rotateAngleX = 0.0F;
         nose.rotateAngleY = 0.0F;
-        nose.rotateAngleZ = 1.570796F;
+        nose.rotateAngleZ = (float)Math.PI/2;
         nose.mirror = false;
         mouth = new ModelRenderer(this, 56, 11);
         mouth.addBox(-1.5F, 4F, -1F, 3, 3, 1, 0.0F);

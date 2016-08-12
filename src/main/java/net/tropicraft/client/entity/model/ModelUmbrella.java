@@ -51,7 +51,7 @@ public class ModelUmbrella extends ModelBase {
         New_Shape31.setRotationPoint(7.5F, -13F, 0F);
 
         New_Shape31.rotateAngleX = -0.2443461F;
-        New_Shape31.rotateAngleY = 1.570796F;
+        New_Shape31.rotateAngleY = (float)Math.PI/2;
         New_Shape31.rotateAngleZ = 0F;
         New_Shape31.mirror = false;
 
@@ -60,7 +60,7 @@ public class ModelUmbrella extends ModelBase {
         New_Shape32.setRotationPoint(0F, -12.75F, -8.5F);
 
         New_Shape32.rotateAngleX = -0.2443461F;
-        New_Shape32.rotateAngleY = 3.141593F;
+        New_Shape32.rotateAngleY = (float)Math.PI;
         New_Shape32.rotateAngleZ = 0F;
         New_Shape32.mirror = false;
 
@@ -69,7 +69,7 @@ public class ModelUmbrella extends ModelBase {
         New_Shape33.setRotationPoint(-6.5F, -13.25F, 0F);
 
         New_Shape33.rotateAngleX = -0.2443461F;
-        New_Shape33.rotateAngleY = -1.570796F;
+        New_Shape33.rotateAngleY = -(float)Math.PI/2;
         New_Shape33.rotateAngleZ = 0F;
         New_Shape33.mirror = false;
 
@@ -105,7 +105,7 @@ public class ModelUmbrella extends ModelBase {
         New_Shape111.setRotationPoint(0F, -10F, 0F);
 
         New_Shape111.rotateAngleX = 1.902409F;
-        New_Shape111.rotateAngleY = 1.570796F;
+        New_Shape111.rotateAngleY = (float)Math.PI/2;
         New_Shape111.rotateAngleZ = 0F;
         New_Shape111.mirror = false;
 
@@ -114,7 +114,7 @@ public class ModelUmbrella extends ModelBase {
         New_Shape112.setRotationPoint(0F, -10F, 0F);
 
         New_Shape112.rotateAngleX = 1.902409F;
-        New_Shape112.rotateAngleY = -1.570796F;
+        New_Shape112.rotateAngleY = -(float)Math.PI/2;
         New_Shape112.rotateAngleZ = 0F;
         New_Shape112.mirror = false;
 

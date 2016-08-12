@@ -446,12 +446,12 @@ public class ModelScubaGear extends ModelBiped {
         Tank2m1.renderWithRotation(par7);
 
         Tank2m2.rotateAngleX = 0F;
-        Tank2m2.rotateAngleY = -1.570796F;
+        Tank2m2.rotateAngleY = -(float)Math.PI/2;
         Tank2m2.rotateAngleZ = 0F;
         Tank2m2.renderWithRotation(par7);
 
         Tank2m3.rotateAngleX = 0F;
-        Tank2m3.rotateAngleY = -1.570796F;
+        Tank2m3.rotateAngleY = -(float)Math.PI/2;
         Tank2m3.rotateAngleZ = 0F;
         Tank2m3.renderWithRotation(par7);
 
@@ -491,12 +491,12 @@ public class ModelScubaGear extends ModelBiped {
         Tank1m1.renderWithRotation(par7);
 
         Tank1m2.rotateAngleX = 0F;
-        Tank1m2.rotateAngleY = -1.570796F;
+        Tank1m2.rotateAngleY = -(float)Math.PI/2;
         Tank1m2.rotateAngleZ = 0F;
         Tank1m2.renderWithRotation(par7);
 
         Tank1m3.rotateAngleX = 0F;
-        Tank1m3.rotateAngleY = -1.570796F;
+        Tank1m3.rotateAngleY = -(float)Math.PI/2;
         Tank1m3.rotateAngleZ = 0F;
         Tank1m3.renderWithRotation(par7);
 
