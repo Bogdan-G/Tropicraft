@@ -876,7 +876,7 @@ enchantwand.desc = Make a 2 block wide, 2 block long, 1 block high square of tro
 			@Override
 			public int getBurnTime(ItemStack fuel) {
 				// Palm slabs
-				if (fuel.getItem() != null && fuel.getItem() instanceof ItemBlock
+				if (fuel.getItem() instanceof ItemBlock
 						&& Block.getBlockFromItem(fuel.getItem()) == TCBlockRegistry.singleSlabs && fuel.getItemDamage() == 3) {
 					return 150;
 				}

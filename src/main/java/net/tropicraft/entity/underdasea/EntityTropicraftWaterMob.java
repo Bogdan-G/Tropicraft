@@ -108,7 +108,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
         }
 
         // Move towards the surface
-        if(surfaceTick != 0){
+        if(surfaceTick != -1){
             surfaceTick--;
         }
 
@@ -116,7 +116,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
             // Wander
             if(important1 < math_pi) {
                 float f = important1 / math_pi;
-                if((double)f > 0.75D) {
+                if(f > 0.75F) {
                     randomMotionSpeed = 1.0F;
                 } 
             } else {
@@ -156,9 +156,9 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
             	this.setAir(20 * 20);
             //}
 
-            //if(!isInWater() && deathTime == 0) {
-                //motionY += .50;
-                /*this.attackEntityFrom(DamageSource.drown, 1);
+            /*if(!isInWater() && deathTime == 0) {
+                motionY += .50;
+                this.attackEntityFrom(DamageSource.drown, 1);
                 int d = 1;
                 int e = 1;
                 if(rand.nextInt(2) == 0){
@@ -168,8 +168,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
                     e = -1;
                 }
                 motionZ = rand.nextFloat()*.20F *d;
-                motionX = rand.nextFloat()*.20F*e;*/
-            //}
+                motionX = rand.nextFloat()*.20F*e;
+            }*/
 
             Block blockUnder = worldObj.getBlock(MathHelper.floor_double(posX), MathHelper.floor_double(posY - 1), MathHelper.floor_double(posZ));
             Block blockAt = worldObj.getBlock(MathHelper.floor_double(posX), MathHelper.floor_double(posY), MathHelper.floor_double(posZ));
@@ -232,7 +232,7 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
                     reachedTarget = true;
                 }
                 if(posY <= targetHeight + .15 && posY >= targetHeight - .15 || reachedTarget/* == true*/) {
-                    reachedTarget = true;
+                    if (!reachedTarget) reachedTarget = true;
                     targetHeightTick = 120;
                     randomMotionVecY = 0;
 

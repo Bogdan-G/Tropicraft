@@ -116,7 +116,7 @@ public class TileEntityAirCompressor extends TileEntity {
     }
     
     public boolean addTank(ItemStack stack) {
-        if (tank == null && stack.getItem() != null && stack.getItem() instanceof ItemScubaTank) {
+        if (tank == null && stack.getItem() instanceof ItemScubaTank) {
             this.tank = stack;
             this.compressing = true;
             sync();

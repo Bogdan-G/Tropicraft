@@ -12,6 +12,7 @@ import net.tropicraft.registry.TCItemRegistry;
 public class EntityMarlin extends EntityTropicraftWaterMob {
 
 	public String texture = "";
+	private int ueas_jump = 5;//test bug
 	
 	public EntityMarlin(World world) {
 		super(world);
@@ -108,8 +109,7 @@ public class EntityMarlin extends EntityTropicraftWaterMob {
 	@Override
 	protected void updateEntityActionState() {
 		super.updateEntityActionState();
-		if (isInWater() && worldObj.rand.nextInt(500) == 0 && !isSurfacing
-				&& Math.floor(posY) >= 60D) {
+		/*if (isInWater() && worldObj.rand.nextInt(ueas_jump) == 0 && !isSurfacing && Math.floor(posY) >= 60D) {
 			//System.out.println("Aye");
 			isSurfacing = true;
 			motionX *= 1.5F;
@@ -118,7 +118,7 @@ public class EntityMarlin extends EntityTropicraftWaterMob {
 			surfaceTick = 20;
 			reachedTarget = false;
 			return;
-		}
+		}*/
 	}
 
 

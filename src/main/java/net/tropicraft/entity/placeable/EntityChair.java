@@ -184,7 +184,7 @@ public class EntityChair extends Entity {
 				this.motionY += 0.007000000216066837D;
 			}
 
-			if (this.getComeSailAway() && this.riddenByEntity != null && this.riddenByEntity instanceof EntityLivingBase) {
+			if (this.getComeSailAway() && this.riddenByEntity instanceof EntityLivingBase) {
 				EntityLivingBase entitylivingbase = (EntityLivingBase)this.riddenByEntity;
 				float f = this.riddenByEntity.rotationYaw + -entitylivingbase.moveStrafing * 90.0F;
 				this.motionX += -Math.sin((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
@@ -377,7 +377,7 @@ public class EntityChair extends Entity {
 	 */
 	@Override
 	public boolean interactFirst(EntityPlayer player) {
-		if (this.riddenByEntity != null && this.riddenByEntity instanceof EntityPlayer && this.riddenByEntity != player) {
+		if (this.riddenByEntity instanceof EntityPlayer && this.riddenByEntity != player) {
 			return true;
 		} else {
 			if (!this.worldObj.isRemote) {

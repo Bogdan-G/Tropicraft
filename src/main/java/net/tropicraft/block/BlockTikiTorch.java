@@ -114,7 +114,7 @@ public class BlockTikiTorch extends BlockTropicraft {
 			}
 
 			if (b != Blocks.glass && !(b instanceof BlockFence)) {
-				if (b != null && b instanceof BlockStairs) {
+				if (b instanceof BlockStairs) {
 					int meta = world.getBlockMetadata(x, y, z);
 
 					if ((4 & meta) != 0) {
