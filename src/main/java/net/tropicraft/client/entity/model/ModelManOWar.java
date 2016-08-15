@@ -127,17 +127,17 @@ public class ModelManOWar extends ModelBase {
             CenterTent3.rotateAngleX = 0F;
         } else {
 
-            Tent3.rotateAngleZ = (float) (Math.sin(f2 * .1F)) * .07F + .4F;
-            Tent3.rotateAngleX = (float) (Math.sin(f2 * .1F)) * .05F + .4F;
-            Tent1.rotateAngleZ = -(float) (Math.sin(f2 * .1F)) * .06F + .4F;
-            Tent1.rotateAngleX = -(float) (Math.sin(f2 * .1F)) * .05F + .4F;
-            Tent4.rotateAngleZ = -(float) (Math.sin(f2 * .1F)) * .06F - .4F;
-            Tent4.rotateAngleX = -(float) (Math.sin(f2 * .1F)) * .04F + .4F;
-            Tent2.rotateAngleZ = (float) (Math.sin(f2 * .025F)) * .05F - .4f;
-            Tent2.rotateAngleX = (float) (Math.sin(f2 * .025F)) * .05F + .4F;
-            CenterTent.rotateAngleX = (float) (Math.sin(f2 * .0125F)) * .05F + .2F;
-            CenterTent2.rotateAngleX = (float) (Math.sin(f2 * .0125F)) * .65F + 1.507F;
-            CenterTent3.rotateAngleX = Math.abs((float) (Math.sin(f2 * .0125F)) * .35F) + -1.25F;
+            Tent3.rotateAngleZ = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .1F)) * .07F + .4F;
+            Tent3.rotateAngleX = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .1F)) * .05F + .4F;
+            Tent1.rotateAngleZ = -(float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .1F)) * .06F + .4F;
+            Tent1.rotateAngleX = -(float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .1F)) * .05F + .4F;
+            Tent4.rotateAngleZ = -(float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .1F)) * .06F - .4F;
+            Tent4.rotateAngleX = -(float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .1F)) * .04F + .4F;
+            Tent2.rotateAngleZ = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .025F)) * .05F - .4f;
+            Tent2.rotateAngleX = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .025F)) * .05F + .4F;
+            CenterTent.rotateAngleX = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .0125F)) * .05F + .2F;
+            CenterTent2.rotateAngleX = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .0125F)) * .65F + 1.507F;
+            CenterTent3.rotateAngleX = Math.abs((float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .0125F)) * .35F) + -1.25F;
 
         }
     }

@@ -35,8 +35,8 @@ public class EntityLostMask extends Entity implements WindHandler{
 		this(world);
 		this.setPosition(x, y, z);		
 		this.setType(type);
-		motionX = Math.cos(Math.toRadians(angle + 90))*launchedSpeed;
-		motionZ = Math.sin(Math.toRadians(angle + 90))*launchedSpeed;
+		motionX = org.bogdang.modifications.math.MathHelperLite.cos(Math.toRadians(angle + 90))*launchedSpeed;
+		motionZ = org.bogdang.modifications.math.MathHelperLite.sin(Math.toRadians(angle + 90))*launchedSpeed;
 		double subAngle = MathHelper.wrapAngleTo180_double(angle);
     	double subAngle2 = subAngle + (180 - subAngle)*2;
 		this.rotationYaw = (float) (subAngle2);

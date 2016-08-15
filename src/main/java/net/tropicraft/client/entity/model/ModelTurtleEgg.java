@@ -54,9 +54,9 @@ public class ModelTurtleEgg extends ModelBase {
         hatching = ((EntityTurtleEgg) entityliving).hatchingTime;
         randRotator = ((EntityTurtleEgg) entityliving).rotationRand;
         if (hatching > 0) {
-            Piece1.rotateAngleY = (float) (Math.sin(hatching / 5D));
-            Piece1.rotateAngleX = (float) ((Math.sin(randRotator)));
-            Piece1.rotateAngleZ = (float) ((Math.sin(randRotator * .2)));
+            Piece1.rotateAngleY = (float) (org.bogdang.modifications.math.MathHelperLite.sin(hatching / 5D));
+            Piece1.rotateAngleX = (float) ((org.bogdang.modifications.math.MathHelperLite.sin(randRotator)));
+            Piece1.rotateAngleZ = (float) ((org.bogdang.modifications.math.MathHelperLite.sin(randRotator * .2)));
 
         } else {
             hatching = 0;

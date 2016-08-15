@@ -190,9 +190,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             for (int i = 0; i < 1 + (onLava ? 5 : 0); i++) {
 
-                //motionX = (double)((-Math.sin((look) / (float)Math.PI*180.0F) * Math.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
-                motionX = (double)(-Math.sin((look) / ((float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
-                motionZ = (double)(Math.cos((look) / ((float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                //motionX = (double)((-org.bogdang.modifications.math.MathHelperLite.sin((look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(0 / (float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                motionX = (double)(-org.bogdang.modifications.math.MathHelperLite.sin((look) / ((float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
+                motionZ = (double)(org.bogdang.modifications.math.MathHelperLite.cos((look) / ((float)Math.PI*180.0F)) * (speed + (0.1 * rand.nextFloat())));
 
                 String particle = "flame";
                 if (rand.nextInt(2) == 0) particle = "smoke";
@@ -237,9 +237,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             float look = -180F;
             double dist = 0.5F;
 
-            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            double gatherX = player.posX + ((double)(-org.bogdang.modifications.math.MathHelperLite.sin((player.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
             //double gatherY = player.posY-0.5 + (double)(-MathHelper.sin(player.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
-            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            double gatherZ = player.posZ + ((double)(org.bogdang.modifications.math.MathHelperLite.cos((player.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
 
             String particle = "flame";
             if (rand.nextInt(2) == 0) particle = "smoke";
@@ -261,9 +261,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
 
             range = 2F;
 
-            double gatherX = player.posX + ((double)(-Math.sin((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            double gatherX = player.posX + ((double)(-org.bogdang.modifications.math.MathHelperLite.sin((player.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
             //double gatherY = player.posY + 0.5 + (double)(-MathHelper.sin(player.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
-            double gatherZ = player.posZ + ((double)(Math.cos((player.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            double gatherZ = player.posZ + ((double)(org.bogdang.modifications.math.MathHelperLite.cos((player.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(player.rotationPitch / (float)Math.PI*180.0F)) * dist);
 
             String particle = "flame";
             if (rand.nextInt(2) == 0) particle = "smoke";
@@ -310,9 +310,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
         float look = 0F;
         //int height = 10;
         double dist = 0.1F;
-        double gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
+        double gatherX = center.posX + ((double)(-org.bogdang.modifications.math.MathHelperLite.sin((center.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
         double gatherY = center.posY+0.8 + (double)(-MathHelper.sin(center.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
-        double gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
+        double gatherZ = center.posZ + ((double)(org.bogdang.modifications.math.MathHelperLite.cos((center.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
         double entDist = ent.getDistance(gatherX, gatherY, gatherZ);
 
         if (entDist > -1) {
@@ -328,8 +328,8 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             double var1 = 1.0D;
             /*double var2 = ent.prevRotationPitch + (ent.rotationPitch - ent.prevRotationPitch) * var1;
             double var3 = ent.prevRotationYaw + (ent.rotationYaw - ent.prevRotationYaw) * var1;
-            double var4 = Math.cos(-var3 * 0.017453292F - 3.1415927F);
-            double var5 = Math.sin(-var3 * 0.017453292F - 3.1415927F);*/
+            double var4 = org.bogdang.modifications.math.MathHelperLite.cos(-var3 * 0.017453292F - 3.1415927F);
+            double var5 = org.bogdang.modifications.math.MathHelperLite.sin(-var3 * 0.017453292F - 3.1415927F);*/
             //return Vec3D.createVector((double)(var5 * var6), (double)var7, (double)(var4 * var6));
             //vecX = center.posX - ent.posX;
             //vecY = center.posY - ent.posY;// + (double)(tNode.nextNode.bodyPiece.height / 2.0F) - (tNode.bodyPiece.posY + (double)(tNode.bodyPiece.height / 2.0F));
@@ -396,17 +396,17 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             float rad_angle = angle * 0.01745329F;// * 3.1415927410125732F * 2F;
             float rad_pitch = pitch * 0.01745329F * 2F;// * 3.1415927410125732F * 2F;
             float uhh = 1.0F;
-            float newY = uhh * (float)Math.sin(rad_pitch);
-            float projection = uhh * (float)Math.cos(rad_pitch);
+            float newY = uhh * (float)org.bogdang.modifications.math.MathHelperLite.sin(rad_pitch);
+            float projection = uhh * (float)org.bogdang.modifications.math.MathHelperLite.cos(rad_pitch);
             projection = 1.0F;
             //System.out.println(projection);
-            float newX = projection * (float)Math.cos(rad_angle);
-            float newZ = projection * (float)Math.sin(rad_angle);
+            float newX = projection * (float)org.bogdang.modifications.math.MathHelperLite.cos(rad_angle);
+            float newZ = projection * (float)org.bogdang.modifications.math.MathHelperLite.sin(rad_angle);
             float newVecX = newX / uhh;
             float newVecY = newY / uhh;
             float newVecZ = newZ / uhh;
-            //float var6 = 1.0F;//(float)-Math.cos(-pitch * 0.017453292F);
-            //float var7 = (float)Math.sin(-pitch * 0.017453292F);
+            //float var6 = 1.0F;//(float)-org.bogdang.modifications.math.MathHelperLite.cos(-pitch * 0.017453292F);
+            //float var7 = (float)org.bogdang.modifications.math.MathHelperLite.sin(-pitch * 0.017453292F);
             //ent.motionX -= f3 * var6 * speed;//vecX / var9 * newspeed;
             //ent.motionY -= var7 * speed;//vecY / var9 * newspeed;
             //ent.motionZ += f4 * var6 * speed;// / var9 * newspeed;
@@ -437,9 +437,9 @@ public class ItemFireArmor extends ItemTropicraftArmor {
             /*look = 40F;
             //int height = 10;
             dist = 1F;
-            gatherX = center.posX + ((double)(-Math.sin((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            gatherX = center.posX + ((double)(-org.bogdang.modifications.math.MathHelperLite.sin((center.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
             gatherY = center.posY-0.5 + (double)(-MathHelper.sin(center.rotationPitch / (float)Math.PI*180.0F) * dist) - 0D; //center.posY - 0D;
-            gatherZ = center.posZ + ((double)(Math.cos((center.rotationYaw+look) / (float)Math.PI*180.0F) * Math.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
+            gatherZ = center.posZ + ((double)(org.bogdang.modifications.math.MathHelperLite.cos((center.rotationYaw+look) / (float)Math.PI*180.0F) * org.bogdang.modifications.math.MathHelperLite.cos(center.rotationPitch / (float)Math.PI*180.0F)) * dist);
             double vecX = ent.posX - gatherX;
             double vecY = ent.posY - gatherY;// + (double)(tNode.nextNode.bodyPiece.height / 2.0F) - (tNode.bodyPiece.posY + (double)(tNode.bodyPiece.height / 2.0F));
             double vecZ = ent.posZ - gatherZ;

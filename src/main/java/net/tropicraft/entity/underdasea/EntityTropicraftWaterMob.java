@@ -205,8 +205,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
                 }
 
                 if(attackTime > 0) {
-                    motionZ = Math.cos((renderYawOffset) / 57.26) * horFactor;
-                    motionX = Math.sin((renderYawOffset) / 57.26) * horFactor;
+                    motionZ = org.bogdang.modifications.math.MathHelperLite.cos((renderYawOffset) / 57.26) * horFactor;
+                    motionX = org.bogdang.modifications.math.MathHelperLite.sin((renderYawOffset) / 57.26) * horFactor;
                     motionY = 0;            
                 } 
             }
@@ -542,8 +542,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
 							fishDebug("Okay player, I want your hook!");
 							this.reachedTarget = false;
 							this.faceEntity(hook, 100f, 100f);
-							motionX = -((fishingApproachSpeed / 10) * Math.sin(Math.toRadians(rotationYaw)));
-							motionZ = ((fishingApproachSpeed / 10) * Math.cos(Math.toRadians(rotationYaw)));
+							motionX = -((fishingApproachSpeed / 10) * org.bogdang.modifications.math.MathHelperLite.sin(Math.toRadians(rotationYaw)));
+							motionZ = ((fishingApproachSpeed / 10) * org.bogdang.modifications.math.MathHelperLite.cos(Math.toRadians(rotationYaw)));
 						//	if(this.getDistanceToEntity(hook) < 4D)
 							motionY = (hook.posY > this.posY + this.height ? 0.2f : -0.2F);
 							//this.isSurfacing = true;
@@ -581,8 +581,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
 							fishDebug("I see a Koa hook worth going for!");
 							this.reachedTarget = false;
 							this.faceEntity(hook, 100f, 100f);
-							motionX = -((fishingApproachSpeed / 10) * Math.sin(Math.toRadians(rotationYaw)));
-							motionZ = ((fishingApproachSpeed / 10) * Math.cos(Math.toRadians(rotationYaw)));
+							motionX = -((fishingApproachSpeed / 10) * org.bogdang.modifications.math.MathHelperLite.sin(Math.toRadians(rotationYaw)));
+							motionZ = ((fishingApproachSpeed / 10) * org.bogdang.modifications.math.MathHelperLite.cos(Math.toRadians(rotationYaw)));
 							motionY = hook.posY > this.posY + this.height ? 0.2f : -0.2F;
 							this.isSurfacing = true;
 						}
@@ -600,8 +600,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
 					if(e.getEntityId() == getHookID() && hook.bobber != this){
 						fishDebug("Taking this player's hook for a swim \\o/!");
 						if(this.isInWater()){
-							//motionX += -((fishingEscapeSpeed) * Math.sin(Math.toRadians(rotationYaw)));
-							//motionZ += ((fishingEscapeSpeed) * Math.cos(Math.toRadians(rotationYaw)));
+							//motionX += -((fishingEscapeSpeed) * org.bogdang.modifications.math.MathHelperLite.sin(Math.toRadians(rotationYaw)));
+							//motionZ += ((fishingEscapeSpeed) * org.bogdang.modifications.math.MathHelperLite.cos(Math.toRadians(rotationYaw)));
 						}
 						double y = hook.getVecToPlayer().yCoord;
 						if(y > 0){
@@ -618,8 +618,8 @@ public abstract class EntityTropicraftWaterMob extends EntityWaterMob {
 						this.faceEntity(hook.angler, 100f, 100f);
 						faceEntity(hook.angler, this, 100f, 100f);
 						fishDebug("D: KOA'S ARE GONNA KILL AND EAT ME!!!");
-						motionX = -((fishingEscapeSpeed / 10) * Math.sin(Math.toRadians(rotationYaw)));
-						motionZ = ((fishingEscapeSpeed / 10) * Math.cos(Math.toRadians(rotationYaw)));
+						motionX = -((fishingEscapeSpeed / 10) * org.bogdang.modifications.math.MathHelperLite.sin(Math.toRadians(rotationYaw)));
+						motionZ = ((fishingEscapeSpeed / 10) * org.bogdang.modifications.math.MathHelperLite.cos(Math.toRadians(rotationYaw)));
 						motionY = (hook.angler.posY+(hook.angler.height/2)) > this.posY + this.height ? 0.2f : -0.2F;
 						hook.posX = this.posX;
 						hook.posY = this.posY;

@@ -27,9 +27,9 @@ public class ItemWaterWand extends ItemTropicraft {
 			for(double lat = 0; lat < 2 * Math.PI; lat += inc){
 				for( double lng = 0; lng < 2 * Math.PI; lng += inc){
 					for(double len = 1; len < 3; len += 0.5D){
-						int x1 = (int)(Math.cos(lat) * len);
-						int z1 = (int)(Math.sin(lat) * len);
-						int y1 = (int)(Math.sin(lng) * len);
+						int x1 = (int)(org.bogdang.modifications.math.MathHelperLite.cos(lat) * len);
+						int z1 = (int)(org.bogdang.modifications.math.MathHelperLite.sin(lat) * len);
+						int y1 = (int)(org.bogdang.modifications.math.MathHelperLite.sin(lng) * len);
 						if (!removeWater(world, itemstack, player, (int)player.posX + x1, (int)(player.posY) + y1, (int)(player.posZ) + z1)){
 							break;
 						}

@@ -26,7 +26,7 @@ public class ModelSpiderEgg extends ModelBase {
         body.rotateAngleZ = 0F;
         body.mirror = false;
         
-        float bodyWidth = (float) (10F/* + (Math.sin(entity.worldObj.getWorldTime()) * 0.0001F)*/);
+        float bodyWidth = (float) (10F/* + (org.bogdang.modifications.math.MathHelperLite.sin(entity.worldObj.getWorldTime()) * 0.0001F)*/);
         float bodyHeight = 5F;
         
         float entHeight = 2F;
@@ -68,7 +68,7 @@ public class ModelSpiderEgg extends ModelBase {
         
         
         
-        float scale = 1F - (float) (Math.sin(entity.worldObj.getWorldTime() / 2F) * 0.05F);
+        float scale = 1F - (float) (org.bogdang.modifications.math.MathHelperLite.sin(entity.worldObj.getWorldTime() / 2F) * 0.05F);
         
         GL11.glPushMatrix();
         //GL11.glTranslatef(-(offset/2), 0, -(offset/2));
@@ -78,14 +78,14 @@ public class ModelSpiderEgg extends ModelBase {
         GL11.glPopMatrix();
         
         GL11.glPushMatrix();
-        scale = 1F - (float) (Math.sin((entity.worldObj.getWorldTime() + 2F) / 2F) * 0.05F);
+        scale = 1F - (float) (org.bogdang.modifications.math.MathHelperLite.sin((entity.worldObj.getWorldTime() + 2F) / 2F) * 0.05F);
         GL11.glScalef(scale, 1, scale);
         body2.render(f5);
         body4.render(f5);
         GL11.glPopMatrix();
         
         GL11.glPushMatrix();
-        scale = 1F - (float) (Math.sin((entity.worldObj.getWorldTime() + 4F) / 2F) * 0.05F);
+        scale = 1F - (float) (org.bogdang.modifications.math.MathHelperLite.sin((entity.worldObj.getWorldTime() + 4F) / 2F) * 0.05F);
         GL11.glScalef(scale, 1, scale);
         body1.render(f5);
         GL11.glPopMatrix();

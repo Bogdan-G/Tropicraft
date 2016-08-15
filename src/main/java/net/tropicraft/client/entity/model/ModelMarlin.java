@@ -140,21 +140,21 @@ public class ModelMarlin extends ModelBase {
         // head.rotateAngleZ += MathHelper.sin(f2 * 0.25F) * 0.0020F;
 
         if (!inWater) {
-            head.rotateAngleY = (float) (Math.sin(f2 * .55F)) * .260F;
-            tail.rotateAngleY = (float) (Math.sin(f2 * .55F)) * .260F;
-            tail1.rotateAngleY = (float) Math.sin(f2 * .55F) * .260F;
-            tail3.rotateAngleY = (float) Math.sin(f2 * .55F) * .260F;
-            LeftFin.rotateAngleZ = (float) (Math.sin(f2 * .25F)) * .165F + 0.523598F;
-            RightFin.rotateAngleZ = -(float) (Math.sin(f2 * .25F)) * .165F - 0.523598F;
+            head.rotateAngleY = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .55F)) * .260F;
+            tail.rotateAngleY = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .55F)) * .260F;
+            tail1.rotateAngleY = (float) org.bogdang.modifications.math.MathHelperLite.sin(f2 * .55F) * .260F;
+            tail3.rotateAngleY = (float) org.bogdang.modifications.math.MathHelperLite.sin(f2 * .55F) * .260F;
+            LeftFin.rotateAngleZ = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .165F + 0.523598F;
+            RightFin.rotateAngleZ = -(float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .165F - 0.523598F;
             LeftFin.rotateAngleY = -1.5F;
-            RightFin.rotateAngleY = 1.5F - (float) (Math.sin(f2 * .25F)) * .165F - 0.523598F;
+            RightFin.rotateAngleY = 1.5F - (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .165F - 0.523598F;
         } else {
-            head.rotateAngleY = (float) (Math.sin(f2 * .25F)) * .135F;
-            tail.rotateAngleY = (float) (Math.sin(f2 * .25F)) * .135F;
-            tail1.rotateAngleY = (float) Math.sin(f2 * .35F) * .150F;
-            tail3.rotateAngleY = (float) Math.sin(f2 * .45F) * .160F;
-            LeftFin.rotateAngleZ = (float) (Math.sin(f2 * .25F)) * .165F + 0.523598F;
-            RightFin.rotateAngleZ = -(float) (Math.sin(f2 * .25F)) * .165F - 0.523598F;
+            head.rotateAngleY = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .135F;
+            tail.rotateAngleY = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .135F;
+            tail1.rotateAngleY = (float) org.bogdang.modifications.math.MathHelperLite.sin(f2 * .35F) * .150F;
+            tail3.rotateAngleY = (float) org.bogdang.modifications.math.MathHelperLite.sin(f2 * .45F) * .160F;
+            LeftFin.rotateAngleZ = (float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .165F + 0.523598F;
+            RightFin.rotateAngleZ = -(float) (org.bogdang.modifications.math.MathHelperLite.sin(f2 * .25F)) * .165F - 0.523598F;
             LeftFin.rotateAngleY = -0.392699F;
             RightFin.rotateAngleY = 0.392699F;
         }

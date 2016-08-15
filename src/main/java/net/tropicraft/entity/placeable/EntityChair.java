@@ -120,8 +120,8 @@ public class EntityChair extends Entity {
 		int j;
 
 		if (/*this.getComeSailAway() && */d10 > 0.26249999999999996D) {
-			d2 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D);
-			d4 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D);
+			d2 = org.bogdang.modifications.math.MathHelperLite.cos((double)this.rotationYaw * Math.PI / 180.0D);
+			d4 = org.bogdang.modifications.math.MathHelperLite.sin((double)this.rotationYaw * Math.PI / 180.0D);
 
 			if (this.getComeSailAway())
 				for (j = 0; (double)j < 1.0D + d10 * 60.0D; ++j) {
@@ -187,8 +187,8 @@ public class EntityChair extends Entity {
 			if (this.getComeSailAway() && this.riddenByEntity instanceof EntityLivingBase) {
 				EntityLivingBase entitylivingbase = (EntityLivingBase)this.riddenByEntity;
 				float f = this.riddenByEntity.rotationYaw + -entitylivingbase.moveStrafing * 90.0F;
-				this.motionX += -Math.sin((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
-				this.motionZ += Math.cos((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
+				this.motionX += -org.bogdang.modifications.math.MathHelperLite.sin((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
+				this.motionZ += org.bogdang.modifications.math.MathHelperLite.cos((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
 			}
 
 			d2 = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
@@ -451,8 +451,8 @@ public class EntityChair extends Entity {
 	@Override
 	public void updateRiderPosition() {
 		if (this.riddenByEntity != null) {
-			double xOffset = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			double zOffset = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
+			double xOffset = org.bogdang.modifications.math.MathHelperLite.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
+			double zOffset = org.bogdang.modifications.math.MathHelperLite.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			this.riddenByEntity.setPosition(this.posX + xOffset, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + zOffset);
 		}
 	}
